@@ -1,0 +1,105 @@
+/* Namespaced styles: won't interfere with the rest of the BusKaroo homepage. */
+.bk-offers {
+  --offer-bg: #111c2d;
+  --offer-border: rgba(240, 245, 255, .13);
+  --offer-text: #fbfcff;
+  --offer-muted: #acbad0;
+  --offer-accent: #ef6848;
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: clamp(22px, 3.4vw, 36px);
+  overflow: hidden;
+  border: 1px solid var(--offer-border);
+  border-radius: 24px;
+  background: radial-gradient(circle at 89% 20%, rgba(239, 104, 72, .09), transparent 33%),
+              linear-gradient(125deg, #16243a, var(--offer-bg) 69%);
+  color: var(--offer-text);
+  box-shadow: 0 16px 45px rgba(9, 21, 40, .11);
+  font-family: inherit;
+  text-align: left; /* Overrides the older .deals-section centering */
+}
+.bk-offers * { box-sizing: border-box; }
+.bk-offers-topline, .bk-offers-footer, .bk-offers-ticket-top, .bk-offers-ticket-bottom { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.bk-offers-topline { padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,.09); }
+.bk-offers-kicker { display:flex; gap:9px; align-items:center; font-size:.7rem; letter-spacing:.18em; font-weight:800; color:#d5deec; }
+.bk-offers-kicker-dot { width:8px; height:8px; flex:none; border-radius:50%; background:var(--offer-accent); box-shadow:0 0 0 4px rgba(239,104,72,.12); }
+.bk-offers-counter { color:#8b9cb4; font-weight:700; font-size:.8rem; font-variant-numeric:tabular-nums; }
+.bk-offers-counter span:first-child { color:white; }
+.bk-offers-counter-sep { padding:0 6px; opacity:.6; }
+.bk-offers-viewport { overflow:hidden; }
+.bk-offers-track { display:flex; transition:transform 620ms cubic-bezier(.22,1,.36,1); will-change:transform; }
+.bk-offers-no-motion { transition:none; }
+.bk-offers-slide { min-width:100%; flex:0 0 100%; display:grid; grid-template-columns:minmax(0, 1.18fr) minmax(270px, .82fr); gap:clamp(20px, 5vw, 60px); align-items:center; padding:24px 2px 16px; }
+.bk-offers-copy { min-width:0; }
+.bk-offers-offer-label { display:inline-block; padding:6px 10px; background:rgba(239,104,72,.1); border:1px solid rgba(239,104,72,.26); color:#ff9b82; border-radius:7px; letter-spacing:.13em; font-weight:800; font-size:.65rem; }
+.bk-offers-copy h2 { max-width:530px; margin:15px 0 11px; font-size:clamp(1.75rem, 3vw, 2.75rem); line-height:1.13; letter-spacing:-.042em; font-weight:800; color:var(--offer-text); }
+.bk-offers-copy p { max-width:470px; margin:0; font-size:clamp(.9rem, 1.4vw, 1rem); line-height:1.7; color:var(--offer-muted); }
+.bk-offers-buttons { display:flex; flex-wrap:wrap; gap:13px; align-items:center; margin-top:24px; }
+.bk-offers-primary-link { display:inline-flex; justify-content:center; align-items:center; gap:10px; min-height:43px; padding:11px 17px; border-radius:9px; color:#fff; text-decoration:none; background:var(--offer-accent); font-size:.83rem; font-weight:800; transition:background .2s ease, transform .2s ease; }
+.bk-offers-primary-link:hover { background:#d95738; transform:translateY(-1px); }
+.bk-offers-terms-button { min-height:43px; display:inline-flex; align-items:center; gap:12px; border:0; background:none; color:#d2deef; cursor:pointer; font:inherit; font-size:.82rem; font-weight:700; }
+.bk-offers-terms-button:hover { color:#fff; }
+.bk-offers-ticket { position:relative; overflow:visible; border-radius:16px; padding:22px 22px 19px; isolation:isolate; background:linear-gradient(145deg,#ee6c4a,#d8492e); color:#fff; box-shadow:0 13px 25px rgba(0,0,0,.16); }
+.bk-offers-ticket::before, .bk-offers-ticket::after { content:""; position:absolute; z-index:2; width:18px; height:18px; top:70%; border-radius:50%; background:var(--offer-bg); }
+.bk-offers-ticket::before { left:-9px; }
+.bk-offers-ticket::after { right:-9px; }
+.bk-offers-ticket--saffron { background:linear-gradient(140deg,#e8672f,#be3d2a); }
+.bk-offers-ticket--blue { background:linear-gradient(140deg,#3d7edc,#254f98); }
+.bk-offers-ticket--violet { background:linear-gradient(140deg,#7966d8,#5143a5); }
+.bk-offers-ticket--teal { background:linear-gradient(140deg,#1e9b91,#10716d); }
+.bk-offers-ticket--rose { background:linear-gradient(140deg,#db627c,#ab405c); }
+.bk-offers-ticket-top { gap:12px; color:rgba(255,255,255,.91); font-weight:800; font-size:.67rem; letter-spacing:.13em; }
+.bk-offers-ticket-top svg { flex:none; }
+.bk-offers-discount { display:flex; align-items:baseline; gap:9px; margin-top:20px; line-height:1; white-space:nowrap; }
+.bk-offers-discount strong { color:#fff; font-size:clamp(3.1rem, 6vw, 4.5rem); font-weight:900; letter-spacing:-.065em; }
+.bk-offers-discount span { color:#fff; font-size:1.25rem; font-weight:800; }
+.bk-offers-ticket>p { margin:7px 0 20px; color:rgba(255,255,255,.92); font-size:.92rem; font-weight:600; }
+.bk-offers-perforation { height:1px; border-top:1px dashed rgba(255,255,255,.48); margin:0 -5px 17px; }
+.bk-offers-code-wrap { display:flex; flex-direction:column; gap:5px; min-width:0; }
+.bk-offers-code-wrap small { font-size:.62rem; letter-spacing:.15em; opacity:.85; font-weight:700; }
+.bk-offers-code-wrap b { font-size:1.1rem; letter-spacing:.07em; overflow-wrap:anywhere; }
+.bk-offers-copy-button { min-height:38px; border:1px solid rgba(255,255,255,.85); background:#fff; color:#b83c24; border-radius:8px; padding:9px 12px; font:inherit; font-size:.8rem; font-weight:800; cursor:pointer; white-space:nowrap; }
+.bk-offers-copy-button:hover { background:#fff4ed; }
+.bk-offers-terms, .bk-offers-copy-error { padding:12px 15px; margin:2px 0 15px; border-radius:10px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.11); color:#e2e9f4; line-height:1.55; font-size:.81rem; }
+.bk-offers-copy-error { color:#ffd5ca; }
+.bk-offers-footer { border-top:1px solid rgba(255,255,255,.09); padding-top:15px; }
+.bk-offers-footnote { font-size:.71rem; color:#97a9c1; }
+.bk-offers-controls { display:flex; align-items:center; gap:9px; }
+.bk-offers-dots { display:flex; align-items:center; gap:6px; margin-right:12px; }
+.bk-offers-dot { width:7px; height:7px; padding:0; border:0; background:rgba(255,255,255,.28); border-radius:50%; cursor:pointer; transition:width .25s ease, background .25s ease; }
+.bk-offers-dot.is-active { width:27px; border-radius:99px; background:#f18161; }
+.bk-offers-arrow { width:33px; height:33px; padding:0; border-radius:9px; border:1px solid rgba(255,255,255,.2); background:rgba(255,255,255,.05); color:#fff; cursor:pointer; font-size:1.12rem; }
+.bk-offers-arrow:hover { background:rgba(255,255,255,.15); }
+.bk-offers :is(button,a):focus-visible { outline:2px solid #fff; outline-offset:3px; }
+@media (max-width:700px) {
+  .bk-offers { margin:22px 14px; padding:20px; border-radius:18px; }
+  .bk-offers-slide { grid-template-columns:1fr; gap:22px; padding-top:20px; }
+  .bk-offers-copy h2 { max-width:100%; font-size:clamp(1.7rem, 7vw, 2.2rem); }
+  .bk-offers-copy p { line-height:1.5; }
+  .bk-offers-buttons { margin-top:16px; }
+  .bk-offers-ticket { max-width:480px; width:100%; }
+  .bk-offers-footer { align-items:flex-start; gap:13px; }
+  .bk-offers-footnote { max-width:46%; line-height:1.45; }
+  .bk-offers-dots { margin-right:3px; }
+}
+@media (max-width:400px) {
+  .bk-offers { margin-inline:10px; padding:16px; }
+  .bk-offers-ticket { padding:18px; }
+  .bk-offers-discount strong { font-size:2.8rem; }
+  .bk-offers-footnote { font-size:.63rem; }
+  .bk-offers-controls { gap:5px; }
+  .bk-offers-dots { gap:4px; }
+  .bk-offers-arrow { width:29px; height:29px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .bk-offers-track, .bk-offers-primary-link, .bk-offers-dot { transition:none !important; }
+  .bk-offers-primary-link:hover { transform:none; }
+}
+
+/* Carousel stability fixes: slide widths and keyboard focus. */
+.bk-offers-track { width: 100%; min-width: 0; }
+.bk-offers-slide { width: 100%; }
+.bk-offers-viewport { min-width: 0; }
+.bk-offers :is(a,button) { -webkit-tap-highlight-color: transparent; }
+.bk-offers :is(a,button):focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+

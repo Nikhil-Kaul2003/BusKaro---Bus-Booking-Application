@@ -1,0 +1,4409 @@
+@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800&display=swap');
+
+/* ===================================
+   Home Page Styles (Omio + FlixBus Light Theme)
+   =================================== */
+
+.home-page {
+  min-height: 100%;
+  background-color: var(--bg-primary);
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  padding: 0 0 32px 0;
+  /* Flush with top and horizontal edges */
+  background-color: #FFFFFF;
+  /* Matches pure white of search card and banner fade to prevent grayer strips */
+  text-align: center;
+  width: 100%;
+  z-index: 5;
+}
+
+.hero-background-gradient {
+  display: none;
+  /* Disabled to maintain crystal clear background color without layers */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  /* Stretches to full screen width */
+  width: 100%;
+  margin: 0;
+}
+
+/* Widescreen Banner (flush, auto-proportioned to show full width without cropping) */
+.hero-banner-container {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  min-height: 420px;
+  /* Guarantees spacious layout height and prevents overlap on smaller desktop screens/split windows */
+  background: linear-gradient(to bottom, #b46b82, #342a5a);
+  /* Premium matching sky placeholder gradient */
+}
+
+.hero-banner-image {
+  width: 100%;
+  height: auto;
+  /* Scales proportionally to show the entire original image */
+  display: block;
+  filter: brightness(0.94);
+}
+
+.hero-text-overlay {
+  position: absolute;
+  bottom: 16%;
+  /* Balanced vertical breathing room */
+  left: 0;
+  right: 0;
+  padding: var(--space-md) 5%;
+  background: transparent;
+  color: var(--text-inverse);
+  text-align: left;
+  z-index: 3;
+}
+
+.hero-title {
+  font-size: 2.8vw;
+  /* Fluid proportional font size, compact and readable */
+  font-weight: var(--font-bold);
+  /* Bold and solid weight */
+  line-height: 1.2;
+  margin-bottom: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  /* Stronger shadow for clean contrast without background box */
+  white-space: nowrap;
+  /* Never wrap to a new line! */
+}
+
+.hero-subtitle {
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 700px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.popular-routes-section {
+  padding: 40px var(--space-lg) 53px var(--space-lg);
+  background-color: #F2F5F8;
+  /* Soft Blue-Gray Section background for alternating layout */
+}
+
+.section-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  text-align: center;
+  text-transform: none;
+  color: var(--secondary);
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-xs);
+}
+
+.section-title .text-brand-navy {
+  color: var(--secondary);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-top: 0px;
+  margin-bottom: 25px;
+  font-size: var(--text-base);
+}
+
+.routes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  margin-top: 30px;
+}
+
+.route-shortcut-card {
+  position: relative;
+  height: 110px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--bg-dark) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-md);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-default);
+}
+
+.route-shortcut-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 10% 90%, rgba(250, 107, 107, 0.25) 0%, transparent 60%);
+  transition: opacity var(--transition-base);
+}
+
+.route-shortcut-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg), 0 10px 20px rgba(19, 41, 104, 0.15);
+}
+
+.route-shortcut-content {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  width: 100%;
+}
+
+.route-shortcut-content h3 {
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--text-inverse);
+  margin-bottom: 2px;
+}
+
+.route-shortcut-price {
+  font-size: var(--text-sm);
+  color: var(--primary);
+  /* Coral Orange highlight */
+  font-weight: var(--font-semibold);
+}
+
+/* Features Section */
+.features-section {
+  padding: calc(var(--space-3xl) / 1.2) var(--space-lg);
+  background-color: #FFFFFF;
+  /* Pure White background for alternating layout */
+}
+
+.features-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+.feature-card {
+  background: #fafdff;
+  /* Gray cards to pop against white features section background */
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.feature-card:hover {
+  background: #FFFFFF;
+  border-color: var(--secondary);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  margin-bottom: var(--space-md);
+}
+
+.feature-icon svg {
+  color: var(--primary);
+  /* Default: Coral Orange */
+  transition: color var(--transition-base), transform var(--transition-base);
+}
+
+.feature-card:hover .feature-icon svg {
+  color: var(--secondary);
+  /* Hover: Royal Navy (blue) */
+  transform: scale(1.1);
+  /* Smooth scale up on hover */
+}
+
+.feature-card h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+
+
+.text-brand-navy {
+  color: var(--secondary);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .hero-banner-container {
+    height: 38vw;
+    /* Highly responsive horizontal rectangular aspect ratio to show the full bus and bridge journey scene */
+    min-height: 200px;
+    /* Low enough to guarantee a gorgeous widescreen rectangle on all devices */
+  }
+
+  .hero-text-overlay {
+    bottom: 8%;
+    /* Elevated to provide premium breathing room above the search panel */
+    padding: var(--space-md) 5% 12px 5%;
+    /* Increased bottom padding to prevent tight pressing */
+  }
+
+  .hero-title {
+    font-size: 4.2vw;
+    /* Slightly larger premium heading size on tablets/mobile, kept on a single line */
+    line-height: 1.25;
+    white-space: nowrap;
+    /* Never wrap to a new line! */
+  }
+
+  /* Force exactly 2 columns for both grid layouts to ensure balanced visual presentation */
+  .routes-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px;
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-text-overlay {
+    padding: var(--space-md) 5% 10px 5%;
+    /* Comfortable bottom padding on narrow phones */
+    bottom: 11%;
+    /* Cozy elevation to prevent close pressing */
+  }
+
+  .hero-title {
+    font-size: 4.5vw;
+    /* Compact premium heading size on phones, guaranteed single-line fit */
+    white-space: nowrap;
+    /* Never wrap to a new line! */
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+  }
+}
+
+
+
+@media (max-width: 600px) {
+  .route-shortcut-card {
+    height: 90px;
+    padding: var(--space-sm);
+  }
+
+  .route-shortcut-content h3 {
+    font-size: var(--text-sm);
+  }
+}
+
+/* We are constantly expanding our fleet! Video Section */
+.fleet-section {
+  padding: 50px var(--space-lg) 61px var(--space-lg);
+  background-color: #F2F5F8;
+  /* Soft Blue-Gray Section background for alternating layout */
+}
+
+.fleet-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.fleet-header {
+  text-align: center;
+  margin-bottom: 44px;
+}
+
+.fleet-tag {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.fleet-content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.fleet-video-column {
+  position: relative;
+}
+
+.fleet-video-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(19, 41, 104, 0.15);
+  background: #000000;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.fleet-video-wrapper:hover {
+  box-shadow: 0 24px 48px rgba(19, 41, 104, 0.22);
+}
+
+.fleet-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.fleet-text-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fleet-text-column h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--secondary);
+  line-height: 1.25;
+}
+
+.fleet-description {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+.fleet-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.fleet-feature-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.fleet-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background-color: var(--primary-light);
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.fleet-feature-text h4 {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.fleet-feature-text p {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Responsive grid for video section */
+@media (max-width: 1024px) {
+  .fleet-content-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .fleet-text-column {
+    text-align: center;
+  }
+
+  .fleet-feature-item {
+    text-align: left;
+  }
+}
+
+/* Deals Section */
+.deals-section {
+  padding: 24px var(--space-lg) 29px var(--space-lg);
+  background-color: #FFFFFF;
+  /* Pure White background for alternating layout */
+  text-align: center;
+}
+/* BusKaroo Offers - Dark Mode */
+html[data-theme="dark"] .deals-section {
+  background-color: #0b1220;
+}
+
+html[data-theme="dark"] .deal-card {
+  background-color: #1a2230;
+  color: #f1f5f9;
+  border-color: #374151;
+}
+
+html[data-theme="dark"] .deal-card-section-title {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .deal-info h3 {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .deal-tagline {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .deal-description {
+  color: #e2e8f0;
+}
+
+html[data-theme="dark"] .deal-voucher {
+  background-color: #ffffff;
+}
+
+.deals-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.deal-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #F6F9FE;
+  /* Light blue card background */
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 29px 32px;
+  gap: 24px;
+  text-align: left;
+  box-shadow: 0 12px 28px rgba(19, 41, 104, 0.24);
+  /* Rich shadow like trip search panel, does not react to hover */
+  position: relative;
+  overflow: hidden;
+  color: var(--secondary);
+}
+
+.deal-card-header {
+  width: 100%;
+  border-bottom: 1px solid var(--border-default);
+  padding-bottom: 18px;
+  margin-bottom: 7px;
+  position: relative;
+  z-index: 2;
+}
+
+.deal-card-section-title {
+  font-size: 2.2rem;
+  font-weight: var(--font-bold);
+  color: var(--secondary);
+  margin: 0;
+  text-align: left;
+}
+
+.deal-card-body {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.deal-info {
+  flex: 1.3;
+}
+
+.deal-info h3 {
+  font-size: 1.6rem;
+  font-weight: var(--font-bold);
+  color: #2D3748;
+  margin-bottom: 8px;
+}
+
+.deal-tagline {
+  font-size: var(--text-base);
+  color: var(--secondary);
+  /* Navy blue color */
+  font-weight: var(--font-semibold);
+  margin-bottom: 12px;
+}
+
+.deal-description {
+  font-size: var(--text-sm);
+  color: var(--secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.deal-voucher-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.deal-voucher {
+  position: relative;
+  background-color: #FFFFFF;
+  /* White background for voucher widget */
+  border: 1px dashed rgba(19, 41, 104, 0.15);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Watermark geometric background shapes matching the screenshot */
+.voucher-glow-shape {
+  position: absolute;
+  background-color: rgba(250, 107, 107, 0.07);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.voucher-shape-1 {
+  width: 80px;
+  height: 80px;
+  top: -20px;
+  left: -20px;
+}
+
+.voucher-shape-2 {
+  width: 180px;
+  height: 180px;
+  bottom: -50px;
+  right: 140px;
+  background-color: rgba(30, 41, 59, 0.04);
+}
+
+.voucher-shape-3 {
+  width: 320px;
+  height: 320px;
+  top: -100px;
+  right: -60px;
+}
+
+.voucher-shape-4 {
+  width: 240px;
+  height: 240px;
+  bottom: -60px;
+  left: -60px;
+  background-color: rgba(30, 41, 59, 0.04);
+}
+
+.voucher-badge {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.voucher-amount {
+  font-size: 2.2rem;
+  font-weight: var(--font-bold);
+  color: var(--primary);
+  /* Coral discount amount */
+  margin-bottom: 2px;
+  line-height: 1.1;
+}
+
+.voucher-label {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.voucher-btn {
+  width: 100%;
+  height: 40px;
+  background-color: #F6F9FE;
+  border: 1px solid rgba(19, 41, 104, 0.1);
+  border-radius: var(--radius-md);
+  color: var(--secondary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 2;
+}
+
+.voucher-btn:hover {
+  background-color: #FFFFFF;
+  border-color: rgba(19, 41, 104, 0.25);
+  box-shadow: 0 4px 12px rgba(19, 41, 104, 0.08);
+  transform: translateY(-1px);
+}
+
+.voucher-footer {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-top: 12px;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .deal-card {
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .deal-card-section-title {
+    font-size: 1.8rem;
+  }
+
+  .deal-card-body {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .deal-info {
+    text-align: center;
+  }
+}
+
+/* BusKaroo home refresh: compact search-first travel layout */
+.hero-section {
+  padding: 0 24px 12px;
+  background: linear-gradient(180deg, #fff 0%, #f4f7fb 100%);
+}
+
+.hero-content {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.hero-banner-container {
+  min-height: 350px;
+  height: clamp(350px, 39vw, 470px);
+  margin: 24px auto 0;
+  border-radius: 22px;
+  background: #122748;
+  box-shadow: 0 20px 50px rgba(18, 39, 72, 0.16);
+}
+
+.hero-banner-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  filter: brightness(0.62) saturate(0.9);
+}
+
+.hero-image-wash {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(12, 31, 61, 0.88) 0%, rgba(12, 31, 61, 0.56) 44%, rgba(12, 31, 61, 0.08) 100%);
+}
+
+.hero-text-overlay {
+  top: 50%;
+  bottom: auto;
+  left: 0;
+  right: auto;
+  width: min(690px, 80%);
+  padding: 28px 5.5%;
+  transform: translateY(-50%);
+  text-align: left;
+}
+
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 7px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+.hero-title {
+  max-width: 670px;
+  margin-bottom: 12px;
+  font-size: clamp(2.25rem, 5vw, 4.35rem);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  white-space: normal;
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.28);
+}
+
+.hero-subtitle {
+  max-width: 510px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(1rem, 1.6vw, 1.16rem);
+}
+
+.hero-section #search-panel {
+  position: relative;
+  z-index: 5;
+  margin-top: -44px;
+}
+
+.popular-routes-section {
+  padding: 58px 24px 64px;
+  background: #f4f7fb;
+}
+
+.section-container,
+.features-container {
+  max-width: 1120px;
+}
+
+.section-title {
+  color: var(--secondary);
+  font-size: clamp(1.55rem, 2.4vw, 2rem);
+  letter-spacing: -0.035em;
+}
+
+.section-subtitle {
+  color: #65758d;
+}
+
+.routes-grid {
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.route-shortcut-card {
+  min-height: 148px;
+  height: auto;
+  border: 1px solid #dfe8f4;
+  border-radius: 17px;
+  background: linear-gradient(145deg, #282b32 0%, #171c25 72%, #b28a4d 210%);
+  box-shadow: 0 8px 22px rgba(22, 56, 106, 0.1);
+}
+
+.route-shortcut-card:nth-child(2n) {
+  background: linear-gradient(145deg, #343841 0%, #171c25 72%, #b28a4d 210%);
+}
+
+.route-shortcut-card:hover {
+  box-shadow: 0 16px 30px rgba(22, 56, 106, 0.16);
+}
+
+.route-shortcut-price {
+  color: #ffd28d;
+}
+
+.features-section,
+.fleet-section,
+.deals-section {
+  background-color: #fff;
+}
+
+.feature-card {
+  border-radius: 18px;
+  background: #f8faff;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 0 14px 12px;
+  }
+
+  .hero-banner-container {
+    height: 410px;
+    min-height: 410px;
+    margin-top: 14px;
+    border-radius: 16px;
+  }
+
+  .hero-text-overlay {
+    width: 100%;
+    padding: 22px 24px;
+  }
+
+  .hero-section #search-panel {
+    margin-top: -26px;
+  }
+
+  .popular-routes-section {
+    padding: 44px 16px;
+  }
+
+  .routes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-banner-container {
+    height: 360px;
+    min-height: 360px;
+  }
+
+  .hero-title {
+    font-size: 2.35rem;
+  }
+
+  .routes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Statistics Section */
+.stats-section {
+  padding: 47px var(--space-lg);
+  background-color: #F2F5F8;
+  border-top: 1px solid var(--border-default);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Subtle separator lines between items on desktop */
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background-color: rgba(19, 41, 104, 0.1);
+}
+
+.stat-number {
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-weight: var(--font-semibold);
+  color: var(--primary);
+  /* Coral Orange for pop */
+  line-height: 1;
+  margin-bottom: 8px;
+  text-shadow: 0 1px 2px rgba(250, 107, 107, 0.05);
+}
+
+.stat-label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  color: #222222;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+/* Dark mode */
+html[data-theme="dark"] .stat-label {
+  color: #ffffff !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl) var(--space-md);
+  }
+
+  .stat-item:not(:last-child)::after {
+    display: none;
+    /* Hide separators on grid layout */
+  }
+}
+
+/* Keep the search card sitting at the banner edge on every breakpoint. */
+.hero-section #search-panel { margin-top: 0; }
+.hero-section #search-panel .search-card { margin: -44px auto 0; }
+@media (max-width: 768px) {
+  .hero-section #search-panel .search-card { margin-top: -26px; }
+}
+
+/* Swiss Brutalist poster art direction for the BusKaroo homepage. */
+.home-page {
+  --poster-base: #e4e2dd;
+  --poster-ink: #1e1e1e;
+  --poster-red: #db4a2b;
+  --poster-orange: #f8a348;
+  --poster-pink: #ff89a9;
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background: var(--poster-base);
+  color: var(--poster-ink);
+  font-family: 'Satoshi', 'Segoe UI', sans-serif;
+  font-weight: 400;
+}
+
+.home-page :where(h1, h2, h3, h4, .stat-number) {
+  font-family: 'Clash Display', 'Arial Black', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.home-page :where(p, span, label, input, select, button) {
+  font-family: 'Satoshi', 'Segoe UI', sans-serif;
+}
+
+html[data-theme='light'] .header-transparent {
+  background: #e4e2dd;
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+
+html[data-theme='light'] .header-transparent .header-nav-link,
+html[data-theme='light'] .header-transparent .theme-toggle,
+html[data-theme='light'] .header-transparent .profile-trigger {
+  color: #1e1e1e;
+}
+
+.home-page :where(.hero-section, .popular-routes-section, .stats-section,
+  .features-section, .fleet-section, .deals-section) {
+  background: var(--poster-base);
+  color: var(--poster-ink);
+}
+
+.home-page .hero-section {
+  position: relative;
+  isolation: isolate;
+  padding: 22px clamp(16px, 4vw, 64px) 26px;
+}
+
+.home-page .hero-section::before,
+.home-page .hero-section::after,
+.home-page .popular-routes-section::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: clamp(260px, 35vw, 560px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  filter: blur(120px);
+  mix-blend-mode: multiply;
+  opacity: 0.33;
+  pointer-events: none;
+}
+
+.home-page .hero-section::before {
+  top: -150px;
+  left: -100px;
+  background: var(--poster-pink);
+}
+
+.home-page .hero-section::after {
+  top: 80px;
+  right: -180px;
+  width: clamp(300px, 42vw, 680px);
+  background: var(--poster-orange);
+  opacity: 0.3;
+}
+
+.home-page .hero-content {
+  max-width: 1440px;
+}
+
+.home-page .hero-banner-container {
+  height: clamp(480px, 58vw, 760px);
+  min-height: 480px;
+  margin-top: 0;
+  border: 2px solid var(--poster-ink);
+  border-radius: 3px;
+  background: var(--poster-ink);
+  box-shadow: 12px 12px 0 var(--poster-ink);
+}
+
+.home-page .hero-banner-image {
+  filter: brightness(0.58) saturate(0.78) contrast(1.05);
+  object-position: 68% center;
+}
+
+.home-page .hero-image-wash {
+  background: linear-gradient(90deg, rgba(30, 30, 30, 0.9) 0%, rgba(30, 30, 30, 0.64) 43%, rgba(30, 30, 30, 0.06) 100%);
+}
+
+.home-page .hero-text-overlay {
+  width: min(820px, 84%);
+  padding: clamp(24px, 6vw, 84px);
+}
+
+.home-page .hero-kicker {
+  margin-bottom: clamp(20px, 3vw, 38px);
+  padding: 9px 14px;
+  border: 1px solid var(--poster-red);
+  border-radius: 0;
+  color: #fff;
+  background: var(--poster-red);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+}
+
+.home-page .hero-title {
+  max-width: 8ch;
+  margin-bottom: 26px;
+  font-family: 'Clash Display', 'Arial Black', sans-serif;
+  font-size: clamp(4rem, 10vw, 9rem);
+  font-weight: 700;
+  line-height: 0.78;
+  letter-spacing: -0.05em;
+  text-shadow: none;
+}
+
+.home-page .hero-subtitle {
+  max-width: 32rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.home-page .hero-section #search-panel .search-card {
+  margin: -42px auto 0;
+  border: 2px solid var(--poster-ink);
+  border-radius: 2px;
+  background: var(--poster-base);
+  box-shadow: 10px 10px 0 var(--poster-red);
+}
+
+.home-page .search-field label {
+  color: var(--poster-ink);
+  font-weight: 500;
+}
+
+.home-page .search-input {
+  border: 1px solid rgba(30, 30, 30, 0.3);
+  border-radius: 2px;
+  background: #f8f7f4;
+  color: var(--poster-ink);
+}
+
+.home-page .search-button-coral {
+  border-radius: 2px;
+  background: var(--poster-red);
+  box-shadow: 4px 4px 0 var(--poster-ink);
+}
+
+.home-page .search-button-coral:hover:not(:disabled) {
+  background: #bf3821;
+  transform: translate(-1px, -1px);
+}
+
+.home-page .popular-routes-section,
+.home-page .features-section,
+.home-page .fleet-section,
+.home-page .deals-section,
+.home-page .stats-section {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(56px, 8vw, 112px) clamp(18px, 5vw, 76px);
+  border-top: 1px solid rgba(30, 30, 30, 0.2);
+}
+
+.home-page .popular-routes-section::before {
+  top: 2rem;
+  right: 3%;
+  background: var(--poster-pink);
+  opacity: 0.25;
+}
+
+.home-page .section-container,
+.home-page .features-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+}
+
+.home-page .section-title {
+  color: var(--poster-ink);
+  font-family: 'Clash Display', 'Arial Black', sans-serif;
+  font-size: clamp(2.8rem, 6vw, 6.4rem);
+  font-weight: 700;
+  line-height: 0.86;
+  letter-spacing: -0.05em;
+}
+
+.home-page .section-subtitle {
+  max-width: 42rem;
+  margin: 18px auto 0;
+  color: rgba(30, 30, 30, 0.72);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  line-height: 1.45;
+}
+
+.home-page .route-shortcut-card {
+  min-height: 190px;
+  border: 2px solid var(--poster-ink);
+  border-radius: 2px;
+  background: var(--poster-ink);
+  box-shadow: 7px 7px 0 var(--poster-orange);
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.home-page .route-shortcut-card:nth-child(3n + 2) {
+  box-shadow: 7px 7px 0 var(--poster-pink);
+}
+
+.home-page .route-shortcut-card:nth-child(3n) {
+  box-shadow: 7px 7px 0 var(--poster-red);
+}
+
+.home-page .route-shortcut-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 10px 10px 0 var(--poster-red);
+}
+
+.home-page .route-shortcut-overlay {
+  background: linear-gradient(135deg, rgba(219, 74, 43, 0.5), transparent 70%);
+}
+
+.home-page .route-shortcut-card h3 {
+  color: #fff;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  line-height: 0.95;
+}
+
+.home-page .route-shortcut-price {
+  color: var(--poster-orange);
+}
+
+.home-page .stats-grid {
+  max-width: 1180px;
+}
+
+.home-page .stat-number {
+  color: var(--poster-red);
+  font-family: 'Clash Display', 'Arial Black', sans-serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+}
+
+.home-page .stat-label {
+  color: var(--poster-ink);
+  letter-spacing: 0.13em;
+}
+
+.home-page .feature-card,
+.home-page .deal-card {
+  border: 2px solid var(--poster-ink);
+  border-radius: 2px;
+  background: rgba(248, 247, 244, 0.7);
+  box-shadow: 7px 7px 0 var(--poster-ink);
+}
+
+.home-page .feature-card h3,
+.home-page .deal-info h3,
+.home-page .deal-card-section-title,
+.home-page .deal-tagline {
+  color: var(--poster-ink);
+}
+
+.home-page .feature-icon,
+.home-page .voucher-amount {
+  color: var(--poster-red);
+}
+
+.home-page .deal-card-section-title,
+.home-page .deal-info h3 {
+  font-family: 'Clash Display', 'Arial Black', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.home-page .voucher-btn {
+  border: 1px solid var(--poster-ink);
+  border-radius: 2px;
+  background: var(--poster-red);
+  color: #fff;
+}
+
+.home-page .voucher-btn:hover {
+  background: var(--poster-ink);
+  color: #fff;
+}
+
+/* Removed broad animation of every descendant; component-level animations remain. */
+
+@keyframes poster-slide-up {
+  from { opacity: 0; translate: 0 22px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@media (max-width: 768px) {
+  .home-page .hero-section { padding: 12px 14px 28px; }
+  .home-page .hero-banner-container {
+    height: 500px;
+    min-height: 500px;
+    border-radius: 2px;
+    box-shadow: 7px 7px 0 var(--poster-ink);
+  }
+  .home-page .hero-text-overlay { width: 100%; padding: 26px; }
+  .home-page .hero-title { font-size: clamp(3.5rem, 15vw, 6rem); }
+  .home-page .hero-image-wash {
+    background: linear-gradient(90deg, rgba(30, 30, 30, 0.86), rgba(30, 30, 30, 0.3));
+  }
+  .home-page .hero-section #search-panel .search-card {
+    margin-top: -24px;
+    box-shadow: 6px 6px 0 var(--poster-red);
+  }
+  .home-page .route-shortcut-card { min-height: 150px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page :where(*:not(svg):not(path):not(img):not(video):not(source)) {
+    animation: none !important;
+  }
+}
+
+
+/* ==========================================================
+   TRENDING ROUTES - PRO UPGRADE (last block of Home.css)
+   Scoped to .popular-routes-section only.
+   Delete from this comment to the end of the file to undo.
+   ========================================================== */
+
+@property --route-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* ---------- Section backdrop: faint dot grid ---------- */
+.home-page .popular-routes-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(128, 128, 128, 0.14) 1px, transparent 1px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 20%, transparent 72%);
+          mask-image: radial-gradient(ellipse at center, #000 20%, transparent 72%);
+}
+
+/* ---------- Heading accent: slim gradient line ---------- */
+.home-page .popular-routes-section .section-title::after {
+  content: '';
+  display: block;
+  width: 72px;
+  height: 3px;
+  margin: clamp(16px, 2vw, 24px) auto 0;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--poster-orange), var(--poster-pink));
+}
+
+/* ---------- Grid ---------- */
+.home-page .popular-routes-section .routes-grid {
+  counter-reset: route;
+  gap: clamp(16px, 2vw, 28px);
+  margin-top: clamp(32px, 4vw, 56px);
+  padding: 8px 0 20px; /* room for lift + soft shadow */
+}
+
+/* ---------- Card ---------- */
+.home-page .popular-routes-section .route-shortcut-card {
+  --accent: var(--poster-orange);
+  counter-increment: route;
+  min-height: clamp(168px, 15vw, 200px);
+  padding: clamp(18px, 1.7vw, 24px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  background:
+    radial-gradient(120% 90% at 0% 100%, color-mix(in srgb, var(--accent) 16%, transparent) 0%, transparent 60%),
+    linear-gradient(160deg, #1b1f27 0%, #12151b 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 20px 40px -24px rgba(0, 0, 0, 0.6);
+  transition:
+    transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 550ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 400ms ease,
+    filter 450ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.home-page .popular-routes-section .route-shortcut-card:nth-child(3n + 2) { --accent: var(--poster-pink); }
+.home-page .popular-routes-section .route-shortcut-card:nth-child(3n)     { --accent: var(--poster-red); }
+
+/* Rotating light ring around the edge (appears on hover) */
+.home-page .popular-routes-section .route-shortcut-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  padding: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: conic-gradient(
+    from var(--route-angle),
+    transparent 0deg,
+    transparent 230deg,
+    color-mix(in srgb, var(--accent) 90%, #fff) 300deg,
+    transparent 360deg
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  opacity: 0;
+  transition: opacity 500ms ease;
+  animation: route-ring-spin 3.6s linear infinite;
+  animation-play-state: paused;
+}
+
+/* Soft sheen that glides across on hover */
+.home-page .popular-routes-section .route-shortcut-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, 0.07) 50%, transparent 62%);
+  transform: translateX(-120%);
+  transition: transform 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Corner glow tied to the accent color */
+.home-page .popular-routes-section .route-shortcut-overlay {
+  background: radial-gradient(circle at 12% 110%, color-mix(in srgb, var(--accent) 38%, transparent) 0%, transparent 58%);
+  opacity: 0.55;
+  transform-origin: bottom left;
+  transition: opacity 600ms ease, transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Small editorial index: 01, 02, 03... */
+.home-page .popular-routes-section .route-shortcut-content::before {
+  content: counter(route, decimal-leading-zero);
+  display: block;
+  margin-bottom: 10px;
+  font-family: 'Satoshi', 'Segoe UI', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.42);
+  transition: color 400ms ease, letter-spacing 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-page .popular-routes-section .route-shortcut-card h3 {
+  margin-bottom: 8px;
+  transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Price: clean text with a sliding arrow */
+.home-page .popular-routes-section .route-shortcut-price {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: color-mix(in srgb, var(--accent) 70%, #fff);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-page .popular-routes-section .route-shortcut-price::after {
+  content: '\2192';
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 400ms ease, transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Hairline that draws itself under the price */
+.home-page .popular-routes-section .route-shortcut-content::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  margin-top: 12px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  transition: width 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Hover (mouse devices only) ---------- */
+@media (hover: hover) {
+  .home-page .popular-routes-section .route-shortcut-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.09),
+      0 30px 50px -24px color-mix(in srgb, var(--accent) 45%, transparent),
+      0 18px 30px -18px rgba(0, 0, 0, 0.7);
+  }
+
+  .home-page .popular-routes-section .route-shortcut-card:hover::before {
+    opacity: 1;
+    animation-play-state: running;
+  }
+
+  .home-page .popular-routes-section .route-shortcut-card:hover::after {
+    transform: translateX(120%);
+  }
+
+  .home-page .popular-routes-section .route-shortcut-card:hover .route-shortcut-overlay {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+
+  .home-page .popular-routes-section .route-shortcut-card:hover .route-shortcut-content::before {
+    color: color-mix(in srgb, var(--accent) 80%, #fff);
+    letter-spacing: 0.3em;
+  }
+
+  .home-page .popular-routes-section .route-shortcut-card:hover h3 {
+    transform: translateX(4px);
+  }
+
+  .home-page .popular-routes-section .route-shortcut-card:hover .route-shortcut-price::after {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .home-page .popular-routes-section .route-shortcut-card:hover .route-shortcut-content::after {
+    width: 100%;
+  }
+
+  /* Focus effect: the other cards quietly step back */
+  .home-page .popular-routes-section .routes-grid:has(.route-shortcut-card:hover) .route-shortcut-card:not(:hover) {
+    filter: brightness(0.72) saturate(0.8);
+  }
+}
+
+.home-page .popular-routes-section .route-shortcut-card:active {
+  transform: translateY(-2px) scale(0.99);
+  transition-duration: 160ms;
+}
+
+.home-page .popular-routes-section .route-shortcut-card:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 4px;
+}
+
+@keyframes route-ring-spin {
+  to { --route-angle: 360deg; }
+}
+
+/* ---------- Scroll-in reveal with stagger ---------- */
+@supports (animation-timeline: view()) {
+  .home-page .popular-routes-section .route-shortcut-card {
+    animation: route-reveal cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 60%;
+  }
+  .home-page .popular-routes-section .route-shortcut-card:nth-child(2) { animation-range: entry 8% entry 68%; }
+  .home-page .popular-routes-section .route-shortcut-card:nth-child(3) { animation-range: entry 16% entry 76%; }
+  .home-page .popular-routes-section .route-shortcut-card:nth-child(4) { animation-range: entry 24% entry 84%; }
+
+  .home-page .popular-routes-section .section-title,
+  .home-page .popular-routes-section .section-subtitle {
+    animation: route-reveal ease-out both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 45%;
+  }
+}
+
+@keyframes route-reveal {
+  from { opacity: 0; translate: 0 32px; scale: 0.97; }
+  to   { opacity: 1; translate: 0 0;    scale: 1; }
+}
+
+/* Fallback stagger when scroll timelines are not supported */
+@supports not (animation-timeline: view()) {
+  .home-page .popular-routes-section .route-shortcut-card:nth-child(2) { animation-delay: 0.08s; }
+  .home-page .popular-routes-section .route-shortcut-card:nth-child(3) { animation-delay: 0.16s; }
+  .home-page .popular-routes-section .route-shortcut-card:nth-child(4) { animation-delay: 0.24s; }
+}
+
+/* ---------- Mobile / touch ---------- */
+@media (max-width: 600px) {
+  .home-page .popular-routes-section .route-shortcut-card {
+    min-height: 150px;
+  }
+  .home-page .popular-routes-section .route-shortcut-price::after {
+    display: none;
+  }
+}
+
+@media (hover: none) {
+  .home-page .popular-routes-section .route-shortcut-price::after {
+    opacity: 1;
+    transform: none;
+  }
+  .home-page .popular-routes-section .route-shortcut-content::after {
+    width: 100%;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .home-page .popular-routes-section .route-shortcut-card,
+  .home-page .popular-routes-section .route-shortcut-card::before,
+  .home-page .popular-routes-section .route-shortcut-card::after,
+  .home-page .popular-routes-section .route-shortcut-overlay,
+  .home-page .popular-routes-section .route-shortcut-card h3,
+  .home-page .popular-routes-section .route-shortcut-content::before,
+  .home-page .popular-routes-section .route-shortcut-content::after,
+  .home-page .popular-routes-section .route-shortcut-price::after,
+  .home-page .popular-routes-section .section-title,
+  .home-page .popular-routes-section .section-subtitle {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+
+/* ==========================================================
+   OFFERS SECTION - REDESIGN (after the Trending Routes block)
+   Scoped to .deals-section only. Works in light and dark theme.
+   Delete from this comment to the end of the file to undo.
+   ========================================================== */
+
+/* ---------- Card: clean surface, subtle pattern, accent bar ---------- */
+.home-page .deals-section .deal-card {
+  border: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+  border-radius: 20px;
+  background-image: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, currentColor 4%, transparent) 0 1px,
+    transparent 1px 18px
+  );
+  box-shadow: 0 28px 50px -34px rgba(0, 0, 0, 0.5);
+  transition:
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 400ms ease;
+}
+
+/* Slow drifting glow inside the card (stays inside, never bleeds outside) */
+.home-page .deals-section .deal-card::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  left: -140px;
+  bottom: -230px;
+  width: 460px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(219, 74, 43, 0.26) 0%, transparent 65%);
+  filter: blur(36px);
+  pointer-events: none;
+  animation: deal-aurora 18s ease-in-out infinite alternate;
+}
+
+/* Left accent bar */
+.home-page .deals-section .deal-card::after {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 5px;
+  background: linear-gradient(180deg, var(--poster-red), var(--poster-orange));
+  transform-origin: top;
+  pointer-events: none;
+}
+
+/* ---------- Heading + header line ---------- */
+.home-page .deals-section .deal-card-section-title {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  line-height: 1;
+}
+
+.home-page .deals-section .deal-card-header {
+  border-bottom-color: transparent;
+}
+
+.home-page .deals-section .deal-card-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--poster-red),
+    color-mix(in srgb, currentColor 18%, transparent) 45%,
+    transparent
+  );
+  transform-origin: left;
+}
+
+/* Key phrases get a gradient underline that draws in */
+.home-page .deals-section .deal-description strong {
+  padding-bottom: 2px;
+  background: linear-gradient(90deg, var(--poster-red), var(--poster-orange)) 0 100% / 100% 2px no-repeat;
+}
+
+/* ---------- Floating background shapes ---------- */
+.home-page .deals-section .deal-card .voucher-glow-shape {
+  background-color: rgba(219, 74, 43, 0.09);
+}
+.home-page .deals-section .voucher-shape-1 { animation: deal-float-a 13s ease-in-out infinite alternate; }
+.home-page .deals-section .voucher-shape-2 { animation: deal-float-b 16s ease-in-out infinite alternate; }
+.home-page .deals-section .voucher-shape-3 { animation: deal-float-c 20s ease-in-out infinite alternate; }
+.home-page .deals-section .voucher-shape-4 { animation: deal-float-a 17s ease-in-out infinite alternate-reverse; }
+
+/* ---------- Voucher: bold brand-red coupon with scalloped edges ---------- */
+.home-page .deals-section .deal-voucher {
+  border: 0;
+  border-radius: 16px;
+  color: #fff;
+  background: linear-gradient(150deg, #e0522f 0%, #c23f23 100%);
+  box-shadow: 0 26px 40px -26px rgba(0, 0, 0, 0.55);
+  -webkit-mask:
+    radial-gradient(circle 6px at 0 50%, #0000 98%, #000) left / 51% 24px repeat-y,
+    radial-gradient(circle 6px at 100% 50%, #0000 98%, #000) right / 51% 24px repeat-y;
+          mask:
+    radial-gradient(circle 6px at 0 50%, #0000 98%, #000) left / 51% 24px repeat-y,
+    radial-gradient(circle 6px at 100% 50%, #0000 98%, #000) right / 51% 24px repeat-y;
+  animation: deal-hover-float 7s ease-in-out infinite;
+}
+
+/* Inner dashed stitch line */
+.home-page .deals-section .deal-voucher::before {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 1px dashed rgba(255, 255, 255, 0.38);
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+/* Light sweep across the voucher on card hover */
+.home-page .deals-section .deal-voucher::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.3) 50%, transparent 60%);
+  transform: translateX(-130%);
+  transition: transform 1200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-page .deals-section .deal-voucher .voucher-glow-shape {
+  background-color: rgba(255, 255, 255, 0.09);
+}
+
+.home-page .deals-section .voucher-badge {
+  color: rgba(255, 255, 255, 0.78);
+  letter-spacing: 0.16em;
+}
+
+.home-page .deals-section .voucher-amount {
+  font-family: 'Clash Display', 'Arial Black', sans-serif;
+  font-size: clamp(2.4rem, 3.4vw, 3.1rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background: linear-gradient(100deg, #fff 0%, #fff 42%, #ffd9cb 50%, #fff 58%, #fff 100%);
+  background-size: 260% 100%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: deal-shimmer 6s ease-in-out infinite;
+}
+
+.home-page .deals-section .voucher-label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.home-page .deals-section .voucher-footer {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ---------- Button: white on red, with sliding arrow ---------- */
+.home-page .deals-section .voucher-btn {
+  overflow: hidden;
+  border: 0;
+  background-color: #fff;
+  color: #b9381d;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition:
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 300ms ease,
+    color 300ms ease;
+}
+
+.home-page .deals-section .voucher-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgba(219, 74, 43, 0.16) 50%, transparent 65%);
+  transform: translateX(-120%);
+  transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.home-page .deals-section .voucher-btn::after {
+  content: '\2192';
+  display: inline-block;
+  width: 0;
+  margin-left: 0;
+  overflow: hidden;
+  vertical-align: bottom;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition:
+    width 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    margin-left 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 300ms ease,
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-page .deals-section .voucher-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* ---------- Hover (mouse devices only) ---------- */
+@media (hover: hover) {
+  .home-page .deals-section .deal-card:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, currentColor 26%, transparent);
+    box-shadow: 0 40px 60px -34px rgba(0, 0, 0, 0.6);
+  }
+
+  .home-page .deals-section .deal-card:hover .deal-voucher::after {
+    transform: translateX(130%);
+  }
+
+  .home-page .deals-section .voucher-btn:hover {
+    background-color: #1e1e1e;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 24px -12px rgba(0, 0, 0, 0.6);
+  }
+
+  .home-page .deals-section .voucher-btn:hover::before {
+    transform: translateX(120%);
+  }
+
+  .home-page .deals-section .voucher-btn:hover::after {
+    width: 1em;
+    margin-left: 8px;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.home-page .deals-section .voucher-btn:active {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 120ms;
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes deal-aurora {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(180px, -70px) scale(1.2); }
+}
+
+@keyframes deal-float-a {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(14px, 18px); }
+}
+
+@keyframes deal-float-b {
+  from { transform: translate(0, 0); }
+  to   { transform: translate(-18px, -12px); }
+}
+
+@keyframes deal-float-c {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-24px, 16px) scale(1.07); }
+}
+
+@keyframes deal-hover-float {
+  0%, 100% { translate: 0 0; }
+  50%      { translate: 0 -5px; }
+}
+
+@keyframes deal-shimmer {
+  0%        { background-position: 120% 0; }
+  45%, 100% { background-position: -120% 0; }
+}
+
+@keyframes deal-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes deal-slide-left {
+  from { opacity: 0; translate: -80px 0; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+@keyframes deal-slide-right {
+  from { opacity: 0; translate: 110px 0; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+@keyframes deal-line-draw {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes deal-bar-draw {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+@keyframes deal-underline {
+  from { background-size: 0% 2px; }
+  to   { background-size: 100% 2px; }
+}
+
+/* ---------- Scroll-driven entrance: text slides from the left, voucher from the right ---------- */
+@supports (animation-timeline: view()) {
+  .home-page .deals-section .deal-card {
+    animation: deal-fade linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+
+  .home-page .deals-section .deal-card::after {
+    animation: deal-bar-draw linear both;
+    animation-timeline: view();
+    animation-range: entry 5% entry 60%;
+  }
+
+  .home-page .deals-section .deal-card-section-title {
+    animation: deal-slide-left cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 50%;
+  }
+
+  .home-page .deals-section .deal-card-header::after {
+    animation: deal-line-draw linear both;
+    animation-timeline: view();
+    animation-range: entry 15% entry 70%;
+  }
+
+  .home-page .deals-section .deal-info h3 {
+    animation: deal-slide-left cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 10% entry 58%;
+  }
+
+  .home-page .deals-section .deal-tagline {
+    animation: deal-slide-left cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 18% entry 66%;
+  }
+
+  .home-page .deals-section .deal-description {
+    animation: deal-slide-left cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 26% entry 74%;
+  }
+
+  .home-page .deals-section .deal-description strong {
+    animation: deal-underline linear both;
+    animation-timeline: view();
+    animation-range: entry 55% entry 100%;
+  }
+
+  .home-page .deals-section .deal-voucher-container {
+    animation: deal-slide-right cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 10% entry 62%;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .home-page .deals-section .deal-card::before {
+    width: 320px;
+    left: -120px;
+  }
+  .home-page .deals-section .voucher-btn::after {
+    display: none;
+  }
+  /* shorter slide distance on small screens to avoid sideways scroll */
+  @supports (animation-timeline: view()) {
+    .home-page .deals-section .deal-voucher-container {
+      animation-name: deal-fade;
+    }
+  }
+}
+
+/* ---------- Touch devices: no hover lift ---------- */
+@media (hover: none) {
+  .home-page .deals-section .deal-card {
+    transition: none;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .home-page .deals-section .deal-card,
+  .home-page .deals-section .deal-card::before,
+  .home-page .deals-section .deal-card::after,
+  .home-page .deals-section .deal-card-section-title,
+  .home-page .deals-section .deal-card-header::after,
+  .home-page .deals-section .deal-info h3,
+  .home-page .deals-section .deal-tagline,
+  .home-page .deals-section .deal-description,
+  .home-page .deals-section .deal-description strong,
+  .home-page .deals-section .deal-voucher-container,
+  .home-page .deals-section .deal-voucher,
+  .home-page .deals-section .deal-voucher::after,
+  .home-page .deals-section .voucher-shape-1,
+  .home-page .deals-section .voucher-shape-2,
+  .home-page .deals-section .voucher-shape-3,
+  .home-page .deals-section .voucher-shape-4,
+  .home-page .deals-section .voucher-amount,
+  .home-page .deals-section .voucher-btn,
+  .home-page .deals-section .voucher-btn::before,
+  .home-page .deals-section .voucher-btn::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+
+/* ==========================================================
+   HERO - FULL-WIDTH BANNER + BETTER TYPOGRAPHY
+   Delete from this comment to the end of the file to undo.
+   (Also remove the @import line at the very top of the file.)
+   ========================================================== */
+
+/* ---------- Banner stretches edge to edge ---------- */
+.home-page .hero-section .hero-banner-container {
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  height: clamp(520px, 56vw, 760px);
+  min-height: 520px;
+}
+
+.home-page .hero-section {
+  padding-top: 0;
+}
+
+/* Slow, subtle zoom-out when the page loads */
+.home-page .hero-section .hero-banner-image {
+  object-position: 70% center;
+  transform-origin: 70% 50%;
+  animation: hero-zoom-out 2.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes hero-zoom-out {
+  from { transform: scale(1.08); }
+  to   { transform: scale(1); }
+}
+
+/* Gentle dark wash so the headline stays readable and the bus stays bright */
+.home-page .hero-section .hero-image-wash {
+  background:
+    linear-gradient(90deg, rgba(14, 16, 22, 0.88) 0%, rgba(14, 16, 22, 0.58) 38%, rgba(14, 16, 22, 0.08) 72%),
+    linear-gradient(0deg, rgba(14, 16, 22, 0.35) 0%, transparent 35%);
+}
+
+/* ---------- Text block ---------- */
+.home-page .hero-section .hero-text-overlay {
+  width: min(1000px, 90%);
+  padding: clamp(24px, 6vw, 110px);
+}
+
+.home-page .hero-section .hero-kicker {
+  margin-bottom: clamp(18px, 2.4vw, 30px);
+  padding: 8px 14px;
+  font-family: 'Satoshi', 'Segoe UI', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+/* ---------- Headline: cleaner, more premium font ---------- */
+.home-page .hero-section .hero-title {
+  max-width: 14ch;
+  margin-bottom: clamp(18px, 2.4vw, 30px);
+  font-family: 'Cabinet Grotesk', 'Clash Display', 'Arial Black', sans-serif;
+  font-size: clamp(3.2rem, 7.6vw, 7.5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  text-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  text-wrap: balance;
+}
+
+.home-page .hero-section .hero-subtitle {
+  max-width: 34rem;
+  font-family: 'Satoshi', 'Segoe UI', sans-serif;
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .home-page .hero-section .hero-banner-container {
+    height: 520px;
+    min-height: 520px;
+  }
+
+  .home-page .hero-section .hero-text-overlay {
+    width: 100%;
+    padding: 28px 22px;
+  }
+
+  .home-page .hero-section .hero-title {
+    max-width: 11ch;
+    font-size: clamp(2.8rem, 13vw, 4.6rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .hero-section .hero-banner-image {
+    animation: none !important;
+  }
+}
+
+
+/* ==========================================================
+   WHY CHOOSE BUSKAROO (features) - PRO UPGRADE
+   Scoped to .features-section only. Orange accent like the Offers voucher.
+   Delete from this comment to the end of the file to undo.
+   ========================================================== */
+
+/* ---------- Section backdrop: soft glow + faint dot grid ---------- */
+.home-page .features-section::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -120px;
+  left: -140px;
+  width: clamp(280px, 38vw, 560px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(219, 74, 43, 0.2) 0%, transparent 65%);
+  filter: blur(40px);
+  pointer-events: none;
+  animation: feat-drift 20s ease-in-out infinite alternate;
+}
+
+.home-page .features-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(128, 128, 128, 0.14) 1px, transparent 1px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 20%, transparent 72%);
+          mask-image: radial-gradient(ellipse at center, #000 20%, transparent 72%);
+}
+
+/* ---------- Heading: orange gradient brand word + slim accent bar ---------- */
+.home-page .features-section .section-title .text-brand-navy {
+  background: linear-gradient(100deg, #c23f23 0%, #db4a2b 35%, #f8a348 50%, #db4a2b 65%, #c23f23 100%);
+  background-size: 260% 100%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: feat-shimmer 7s ease-in-out infinite;
+}
+
+.home-page .features-section .section-title::after {
+  content: '';
+  display: block;
+  width: 72px;
+  height: 3px;
+  margin: clamp(16px, 2vw, 24px) auto 0;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--poster-red), var(--poster-orange));
+  transform-origin: center;
+}
+
+/* ---------- Grid ---------- */
+.home-page .features-section .features-grid {
+  gap: clamp(16px, 2vw, 28px);
+  margin-top: clamp(32px, 4vw, 56px);
+  padding: 8px 0 20px;
+}
+
+/* ---------- Card: soft surface instead of hard offset shadow ---------- */
+.home-page .features-section .feature-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(24px, 2.4vw, 34px) clamp(18px, 1.8vw, 26px);
+  border: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+  border-radius: 18px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 22px 38px -30px rgba(30, 30, 30, 0.45);
+  transition:
+    transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 550ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 400ms ease,
+    background-color 400ms ease,
+    filter 450ms ease;
+}
+
+/* Orange line that draws across the top on hover */
+.home-page .features-section .feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--poster-red), var(--poster-orange));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Soft sheen that glides across on hover */
+.home-page .features-section .feature-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, 0.4) 50%, transparent 62%);
+  transform: translateX(-120%);
+  transition: transform 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Icon tile ---------- */
+.home-page .features-section .feature-icon {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  margin: 0 auto var(--space-md);
+  border: 1px solid rgba(219, 74, 43, 0.22);
+  border-radius: 18px;
+  background: rgba(219, 74, 43, 0.1);
+  transition:
+    transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 400ms ease,
+    border-color 400ms ease,
+    box-shadow 550ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-page .features-section .feature-icon svg {
+  color: var(--poster-red);
+  transition: color 350ms ease, transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Expanding ring around the icon on hover */
+.home-page .features-section .feature-icon::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border: 1.5px solid var(--poster-red);
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.home-page .features-section .feature-card h3 {
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+  transition: color 350ms ease;
+}
+
+.home-page .features-section .feature-card p {
+  transition: color 350ms ease;
+}
+
+/* ---------- Hover (mouse devices only) ---------- */
+@media (hover: hover) {
+  .home-page .features-section .feature-card:hover {
+    transform: translateY(-8px);
+    border-color: color-mix(in srgb, var(--poster-red) 45%, transparent);
+    background: #fff;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.8),
+      0 34px 50px -30px rgba(30, 30, 30, 0.5);
+  }
+
+  .home-page .features-section .feature-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .home-page .features-section .feature-card:hover::after {
+    transform: translateX(120%);
+  }
+
+  .home-page .features-section .feature-card:hover .feature-icon {
+    transform: translateY(-3px) rotate(-6deg) scale(1.06);
+    border-color: transparent;
+    background: linear-gradient(150deg, #e0522f 0%, #c23f23 100%);
+    box-shadow: 0 16px 24px -12px rgba(219, 74, 43, 0.65);
+  }
+
+  .home-page .features-section .feature-card:hover .feature-icon svg {
+    color: #fff;
+    transform: scale(1.04);
+  }
+
+  .home-page .features-section .feature-card:hover .feature-icon::after {
+    animation: feat-ring 1.6s ease-out infinite;
+  }
+
+  .home-page .features-section .feature-card:hover h3 {
+    color: var(--poster-red);
+  }
+
+  /* Focus effect: the other cards quietly step back */
+  .home-page .features-section .features-grid:has(.feature-card:hover) .feature-card:not(:hover) {
+    filter: brightness(0.94) saturate(0.85);
+  }
+}
+
+.home-page .features-section .feature-card:active {
+  transform: translateY(-3px) scale(0.99);
+  transition-duration: 160ms;
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes feat-ring {
+  0%   { transform: scale(1);    opacity: 0.55; }
+  100% { transform: scale(1.55); opacity: 0; }
+}
+
+@keyframes feat-shimmer {
+  0%        { background-position: 120% 0; }
+  45%, 100% { background-position: -120% 0; }
+}
+
+@keyframes feat-drift {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(120px, 60px) scale(1.15); }
+}
+
+@keyframes feat-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes feat-slide-left {
+  from { opacity: 0; translate: -70px 0; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+@keyframes feat-rise {
+  from { opacity: 0; translate: 0 44px; scale: 0.97; }
+  to   { opacity: 1; translate: 0 0;    scale: 1; }
+}
+
+@keyframes feat-pop {
+  from { opacity: 0; scale: 0.5; rotate: -14deg; }
+  to   { opacity: 1; scale: 1;   rotate: 0deg; }
+}
+
+@keyframes feat-bar-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ---------- Scroll-driven entrance (modern browsers) ---------- */
+@supports (animation-timeline: view()) {
+  .home-page .features-section .section-title {
+    animation: feat-slide-left cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 50%;
+  }
+
+  .home-page .features-section .section-title::after {
+    animation: feat-bar-grow linear both;
+    animation-timeline: view();
+    animation-range: entry 20% entry 70%;
+  }
+
+  .home-page .features-section .section-subtitle {
+    animation: feat-fade linear both;
+    animation-timeline: view();
+    animation-range: entry 10% entry 55%;
+  }
+
+  .home-page .features-section .feature-card {
+    animation: feat-rise cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 60%;
+  }
+  .home-page .features-section .feature-card:nth-child(2) { animation-range: entry 8% entry 68%; }
+  .home-page .features-section .feature-card:nth-child(3) { animation-range: entry 16% entry 76%; }
+  .home-page .features-section .feature-card:nth-child(4) { animation-range: entry 24% entry 84%; }
+
+  .home-page .features-section .feature-icon {
+    animation: feat-pop cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    animation-timeline: view();
+    animation-range: entry 25% entry 90%;
+  }
+}
+
+/* Fallback stagger when scroll timelines are not supported */
+@supports not (animation-timeline: view()) {
+  .home-page .features-section .feature-card:nth-child(2) { animation-delay: 0.08s; }
+  .home-page .features-section .feature-card:nth-child(3) { animation-delay: 0.16s; }
+  .home-page .features-section .feature-card:nth-child(4) { animation-delay: 0.24s; }
+}
+
+/* ---------- Mobile / touch ---------- */
+@media (max-width: 768px) {
+  .home-page .features-section .section-title {
+    animation-name: feat-fade;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .home-page .features-section::before,
+  .home-page .features-section .section-title,
+  .home-page .features-section .section-title::after,
+  .home-page .features-section .section-title .text-brand-navy,
+  .home-page .features-section .section-subtitle,
+  .home-page .features-section .feature-card,
+  .home-page .features-section .feature-card::before,
+  .home-page .features-section .feature-card::after,
+  .home-page .features-section .feature-icon,
+  .home-page .features-section .feature-icon svg,
+  .home-page .features-section .feature-icon::after,
+  .home-page .features-section .feature-card h3 {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+
+/* ==========================================================
+   OUR FLEET - REDESIGN
+   Scoped to .fleet-section only. Same orange as Offers / Features.
+   Delete from this comment to the end of the file to undo.
+   ========================================================== */
+
+/* ---------- Section backdrop: soft glow + faint dot grid ---------- */
+.home-page .fleet-section::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: -160px;
+  top: 40px;
+  width: clamp(280px, 38vw, 560px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(219, 74, 43, 0.18) 0%, transparent 65%);
+  filter: blur(40px);
+  pointer-events: none;
+  animation: fleet-drift 22s ease-in-out infinite alternate;
+}
+
+.home-page .fleet-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(128, 128, 128, 0.14) 1px, transparent 1px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 20%, transparent 72%);
+          mask-image: radial-gradient(ellipse at center, #000 20%, transparent 72%);
+}
+
+/* ---------- Header ---------- */
+.home-page .fleet-section .fleet-header {
+  margin-bottom: clamp(36px, 5vw, 64px);
+}
+
+.home-page .fleet-section .fleet-tag {
+  color: var(--poster-red);
+  letter-spacing: 0.2em;
+}
+
+.home-page .fleet-section .section-title::after {
+  content: '';
+  display: block;
+  width: 72px;
+  height: 3px;
+  margin: clamp(16px, 2vw, 24px) auto 0;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--poster-red), var(--poster-orange));
+  transform-origin: center;
+}
+
+/* ---------- New arrangement: video on top, details panel below ---------- */
+.home-page .fleet-section .fleet-content-grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 52px);
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* Viewfinder corner brackets around the video */
+.home-page .fleet-section .fleet-video-column::before,
+.home-page .fleet-section .fleet-video-column::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  width: 44px;
+  height: 44px;
+  pointer-events: none;
+  transition: width 600ms cubic-bezier(0.22, 1, 0.36, 1), height 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-page .fleet-section .fleet-video-column::before {
+  top: -12px;
+  left: -12px;
+  border-top: 3px solid var(--poster-red);
+  border-left: 3px solid var(--poster-red);
+  border-top-left-radius: 14px;
+  transform-origin: top left;
+}
+
+.home-page .fleet-section .fleet-video-column::after {
+  right: -12px;
+  bottom: -12px;
+  border-right: 3px solid var(--poster-orange);
+  border-bottom: 3px solid var(--poster-orange);
+  border-bottom-right-radius: 14px;
+  transform-origin: bottom right;
+}
+
+.home-page .fleet-section .fleet-video-wrapper {
+  border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+  border-radius: 20px;
+  box-shadow: 0 40px 70px -36px rgba(0, 0, 0, 0.65);
+  transition:
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 400ms ease;
+}
+
+/* ---------- Details panel: title + text on the left, features on the right ---------- */
+.home-page .fleet-section .fleet-text-column {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  grid-template-areas:
+    'title feats'
+    'desc  feats';
+  grid-template-rows: auto 1fr;
+  column-gap: clamp(28px, 4vw, 56px);
+  row-gap: 14px;
+  align-items: start;
+  text-align: left;
+}
+
+.home-page .fleet-section .fleet-text-column > h3 {
+  grid-area: title;
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.home-page .fleet-section .fleet-description {
+  grid-area: desc;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.home-page .fleet-section .fleet-features-list {
+  grid-area: feats;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 0;
+}
+
+/* Feature cards */
+.home-page .fleet-section .fleet-feature-item {
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+  border-radius: 16px;
+  background: color-mix(in srgb, currentColor 4%, transparent);
+  text-align: left;
+  transition:
+    transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 350ms ease,
+    background-color 350ms ease,
+    box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-page .fleet-section .fleet-feature-icon {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(219, 74, 43, 0.26);
+  border-radius: 13px;
+  background: rgba(219, 74, 43, 0.14);
+  color: var(--poster-red);
+  transition:
+    transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 350ms ease,
+    color 350ms ease,
+    border-color 350ms ease,
+    box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-page .fleet-section .fleet-feature-text h4 {
+  margin-bottom: 4px;
+  font-size: 0.92rem;
+  letter-spacing: -0.02em;
+}
+
+.home-page .fleet-section .fleet-feature-text p {
+  line-height: 1.5;
+}
+
+/* ---------- Hover (mouse devices only) ---------- */
+@media (hover: hover) {
+  .home-page .fleet-section .fleet-video-wrapper:hover {
+    transform: translateY(-5px);
+    border-color: color-mix(in srgb, var(--poster-red) 55%, transparent);
+    box-shadow:
+      0 50px 80px -40px rgba(0, 0, 0, 0.7),
+      0 0 0 1px rgba(219, 74, 43, 0.25);
+  }
+
+  .home-page .fleet-section .fleet-video-column:hover::before,
+  .home-page .fleet-section .fleet-video-column:hover::after {
+    width: 64px;
+    height: 64px;
+  }
+
+  .home-page .fleet-section .fleet-feature-item:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--poster-red) 50%, transparent);
+    background: color-mix(in srgb, var(--poster-red) 8%, transparent);
+    box-shadow: 0 20px 30px -22px rgba(0, 0, 0, 0.55);
+  }
+
+  .home-page .fleet-section .fleet-feature-item:hover .fleet-feature-icon {
+    transform: rotate(-6deg) scale(1.06);
+    border-color: transparent;
+    background: linear-gradient(150deg, #e0522f 0%, #c23f23 100%);
+    color: #fff;
+    box-shadow: 0 12px 20px -10px rgba(219, 74, 43, 0.7);
+  }
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes fleet-drift {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-120px, 60px) scale(1.15); }
+}
+
+@keyframes fleet-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fleet-slide-left {
+  from { opacity: 0; translate: -60px 0; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+@keyframes fleet-rise {
+  from { opacity: 0; translate: 0 36px; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+@keyframes fleet-reveal {
+  from { opacity: 0.2; clip-path: inset(10% 8% 10% 8% round 32px); }
+  to   { opacity: 1;   clip-path: inset(0 0 0 0 round 20px); }
+}
+
+@keyframes fleet-bracket {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fleet-bar-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ---------- Scroll-driven entrance (modern browsers) ---------- */
+@supports (animation-timeline: view()) {
+  .home-page .fleet-section .section-title {
+    animation: fleet-slide-left cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 50%;
+  }
+
+  .home-page .fleet-section .section-title::after {
+    animation: fleet-bar-grow linear both;
+    animation-timeline: view();
+    animation-range: entry 20% entry 70%;
+  }
+
+  .home-page .fleet-section .fleet-header .section-subtitle,
+  .home-page .fleet-section .fleet-header p {
+    animation: fleet-fade linear both;
+    animation-timeline: view();
+    animation-range: entry 10% entry 55%;
+  }
+
+  .home-page .fleet-section .fleet-video-wrapper {
+    animation: fleet-reveal cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 70%;
+  }
+
+  .home-page .fleet-section .fleet-video-column::before,
+  .home-page .fleet-section .fleet-video-column::after {
+    animation: fleet-bracket cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 30% entry 90%;
+  }
+
+  .home-page .fleet-section .fleet-text-column > h3 {
+    animation: fleet-slide-left cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 60%;
+  }
+
+  .home-page .fleet-section .fleet-description {
+    animation: fleet-slide-left cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 8% entry 68%;
+  }
+
+  .home-page .fleet-section .fleet-feature-item {
+    animation: fleet-rise cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 60%;
+  }
+  .home-page .fleet-section .fleet-feature-item:nth-child(2) { animation-range: entry 8% entry 68%; }
+  .home-page .fleet-section .fleet-feature-item:nth-child(3) { animation-range: entry 16% entry 76%; }
+  .home-page .fleet-section .fleet-feature-item:nth-child(4) { animation-range: entry 24% entry 84%; }
+}
+
+/* ---------- Tablet / mobile ---------- */
+@media (max-width: 820px) {
+  .home-page .fleet-section .fleet-text-column {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'title'
+      'desc'
+      'feats';
+    grid-template-rows: auto;
+    row-gap: 14px;
+  }
+
+  .home-page .fleet-section .fleet-features-list {
+    margin-top: 10px;
+  }
+
+  .home-page .fleet-section .fleet-video-column::before { top: -8px; left: -8px; }
+  .home-page .fleet-section .fleet-video-column::after  { right: -8px; bottom: -8px; }
+}
+
+@media (max-width: 520px) {
+  .home-page .fleet-section .fleet-features-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .home-page .fleet-section::before,
+  .home-page .fleet-section .section-title,
+  .home-page .fleet-section .section-title::after,
+  .home-page .fleet-section .fleet-header .section-subtitle,
+  .home-page .fleet-section .fleet-header p,
+  .home-page .fleet-section .fleet-video-wrapper,
+  .home-page .fleet-section .fleet-video-column::before,
+  .home-page .fleet-section .fleet-video-column::after,
+  .home-page .fleet-section .fleet-text-column > h3,
+  .home-page .fleet-section .fleet-description,
+  .home-page .fleet-section .fleet-feature-item,
+  .home-page .fleet-section .fleet-feature-icon {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+
+/* ==========================================================
+   TRENDING ROUTES - HEADING UPGRADE (very end of Home.css)
+   Cleaner font, orange light sweep, route-line accent.
+   Delete from this comment to the end of the file to undo.
+   ========================================================== */
+
+/* Soft orange glow behind the heading (on the container, so it never tints the text) */
+.home-page .popular-routes-section .section-container::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -30px;
+  left: 50%;
+  width: min(86%, 820px);
+  height: 230px;
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, rgba(219, 74, 43, 0.26), transparent 100%);
+  filter: blur(34px);
+  pointer-events: none;
+  animation: rt-glow 6s ease-in-out infinite alternate;
+}
+
+/* ---------- Title ---------- */
+.home-page .popular-routes-section .section-title {
+  position: relative;
+  max-width: 20ch;
+  margin-inline: auto;
+  font-family: 'Cabinet Grotesk', 'Clash Display', 'Arial Black', sans-serif;
+  font-size: clamp(2.3rem, 5vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  text-shadow: none;
+  animation: rt-reveal 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Orange light that sweeps through the letters every few seconds */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .home-page .popular-routes-section .section-title {
+    background-image:
+      linear-gradient(100deg, transparent 0%, #ff8a5c 38%, #f8a348 50%, #ff8a5c 62%, transparent 100%),
+      linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-size: 38% 100%, 100% 100%;
+    background-position: -70% 0, 0 0;
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation:
+      rt-reveal 900ms cubic-bezier(0.22, 1, 0.36, 1) both,
+      rt-shine 7s ease-in-out 1.4s infinite;
+  }
+}
+
+/* ---------- Accent: a tiny "route" under the title (stop - line - stop) ---------- */
+.home-page .popular-routes-section .section-title::after {
+  content: '';
+  display: block;
+  width: 132px;
+  height: 14px;
+  margin: clamp(18px, 2.4vw, 28px) auto 0;
+  border-radius: 0;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 70%) no-repeat 0% 50% / 16px 16px,
+    radial-gradient(circle 4.5px at 5px 50%, var(--poster-red) 96%, transparent 100%) no-repeat 0 0 / 100% 100%,
+    radial-gradient(circle 4.5px at calc(100% - 5px) 50%, var(--poster-orange) 96%, transparent 100%) no-repeat 0 0 / 100% 100%,
+    linear-gradient(90deg, var(--poster-red), var(--poster-orange)) no-repeat 0 50% / 100% 2px;
+  transform-origin: center;
+  animation: rt-travel 3.4s cubic-bezier(0.45, 0, 0.25, 1) 1.2s infinite;
+}
+
+/* ---------- Subtitle ---------- */
+.home-page .popular-routes-section .section-subtitle {
+  max-width: 38rem;
+  margin: clamp(16px, 2vw, 22px) auto 0;
+  font-family: 'Satoshi', 'Segoe UI', sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  animation: rt-fade-up 900ms cubic-bezier(0.22, 1, 0.36, 1) 250ms both;
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes rt-reveal {
+  from { opacity: 0; translate: 0 30px; filter: blur(10px); }
+  to   { opacity: 1; translate: 0 0;    filter: blur(0); }
+}
+
+@keyframes rt-fade-up {
+  from { opacity: 0; translate: 0 18px; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+@keyframes rt-shine {
+  0%        { background-position: -70% 0, 0 0; }
+  45%, 100% { background-position: 170% 0, 0 0; }
+}
+
+@keyframes rt-travel {
+  0%        { background-position: 0% 50%, 0 0, 0 0, 0 50%; }
+  70%, 100% { background-position: 100% 50%, 0 0, 0 0, 0 50%; }
+}
+
+@keyframes rt-bar-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes rt-glow {
+  from { opacity: 0.55; transform: translateX(-50%) scale(0.94); }
+  to   { opacity: 1;    transform: translateX(-50%) scale(1.06); }
+}
+
+/* ---------- Scroll-driven entrance (modern browsers) ---------- */
+@supports (animation-timeline: view()) {
+  .home-page .popular-routes-section .section-title {
+    animation-timeline: view(), auto;
+    animation-range: entry 0% entry 55%, normal;
+  }
+
+  .home-page .popular-routes-section .section-title::after {
+    animation:
+      rt-bar-grow linear both,
+      rt-travel 3.4s cubic-bezier(0.45, 0, 0.25, 1) 1.2s infinite;
+    animation-timeline: view(), auto;
+    animation-range: entry 20% entry 75%, normal;
+  }
+
+  .home-page .popular-routes-section .section-subtitle {
+    animation: rt-fade-up linear both;
+    animation-timeline: view();
+    animation-range: entry 10% entry 60%;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .home-page .popular-routes-section .section-title {
+    max-width: 14ch;
+  }
+
+  .home-page .popular-routes-section .section-title::after {
+    width: 104px;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .home-page .popular-routes-section .section-container::before,
+  .home-page .popular-routes-section .section-title,
+  .home-page .popular-routes-section .section-title::after,
+  .home-page .popular-routes-section .section-subtitle {
+    animation: none !important;
+  }
+}
+
+
+/* ==========================================================
+   SEARCH CARD - PRO UPGRADE (last block of SearchPanel.css)
+   Theme-aware (dark / light), aligned with the hero banner,
+   same orange as the rest of the site.
+   Delete from this comment to the end of the file to undo.
+   ========================================================== */
+
+/* ---------- Theme tokens (light is the default) ---------- */
+html .home-page .hero-section #search-panel .search-card {
+  --sc-accent: #db4a2b;
+  --sc-accent-2: #f8a348;
+  --sc-pad: clamp(24px, 6vw, 110px);
+  --sc-edge: clamp(16px, 4vw, 64px);
+  --sc-bg: rgba(250, 248, 244, 0.95);
+  --sc-input-bg: #ffffff;
+  --sc-border: rgba(30, 30, 30, 0.14);
+  --sc-text: #1e1e1e;
+  --sc-muted: #6b6f78;
+  color-scheme: light;
+}
+
+html[data-theme='dark'] .home-page .hero-section #search-panel .search-card {
+  --sc-bg: rgba(16, 22, 33, 0.82);
+  --sc-input-bg: #0d121b;
+  --sc-border: rgba(255, 255, 255, 0.12);
+  --sc-text: #f3f4f6;
+  --sc-muted: #9aa5b8;
+  color-scheme: dark;
+}
+
+/* ---------- Card: glass surface, lined up with the banner text ---------- */
+html .home-page .hero-section #search-panel .search-card {
+  width: calc(100% - 2 * (var(--sc-pad) - var(--sc-edge)));
+  max-width: none;
+  margin: -54px auto 0;
+  padding: clamp(20px, 2vw, 30px);
+  border: 1px solid var(--sc-border);
+  border-radius: 22px;
+  color: var(--sc-text);
+  background: var(--sc-bg);
+  -webkit-backdrop-filter: blur(18px) saturate(1.3);
+          backdrop-filter: blur(18px) saturate(1.3);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 40px 70px -38px rgba(0, 0, 0, 0.65),
+    0 26px 50px -36px rgba(219, 74, 43, 0.55);
+  transition:
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 400ms ease;
+  animation: sc-rise 900ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+}
+
+/* Very wide screens: line the card up with the banner text exactly */
+@media (min-width: 1566px) {
+  html .home-page .hero-section #search-panel .search-card {
+    width: min(calc(100vw - 2 * var(--sc-pad)), 1700px);
+    margin: -54px 0 0 calc(50% - 50vw + var(--sc-pad));
+  }
+}
+
+html .home-page .hero-section #search-panel .search-card:hover {
+  border-color: color-mix(in srgb, var(--sc-accent) 40%, var(--sc-border));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 44px 76px -38px rgba(0, 0, 0, 0.7),
+    0 30px 56px -34px rgba(219, 74, 43, 0.65) !important;
+}
+
+/* Thin orange accent line along the top edge */
+html .home-page .hero-section #search-panel .search-card::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 28px;
+  right: 28px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--sc-accent) 30%, var(--sc-accent-2) 70%, transparent);
+  pointer-events: none;
+}
+
+/* ---------- Labels ---------- */
+html .home-page .hero-section #search-panel .search-field label {
+  margin-bottom: 8px;
+  color: var(--sc-muted);
+  font-family: 'Satoshi', 'Segoe UI', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  transition: color 250ms ease;
+}
+
+html .home-page .hero-section #search-panel .search-field:focus-within label {
+  color: var(--sc-accent);
+}
+
+/* ---------- Inputs ---------- */
+html .home-page .hero-section #search-panel .search-input {
+  height: 54px;
+  padding-left: 16px;
+  border: 1px solid var(--sc-border);
+  border-radius: 14px;
+  color: var(--sc-text);
+  background: var(--sc-input-bg);
+  font-family: 'Satoshi', 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  transition:
+    border-color 250ms ease,
+    box-shadow 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 250ms ease;
+}
+
+html .home-page .hero-section #search-panel .search-input::placeholder {
+  color: var(--sc-muted);
+  opacity: 0.9;
+}
+
+html .home-page .hero-section #search-panel .search-input:hover {
+  border-color: color-mix(in srgb, var(--sc-accent) 45%, var(--sc-border));
+}
+
+html .home-page .hero-section #search-panel .search-input:focus {
+  border-color: var(--sc-accent);
+  background: var(--sc-input-bg);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--sc-accent) 20%, transparent);
+}
+
+/* Swap + clear buttons: re-centered for the 54px field */
+html .home-page .hero-section #search-panel .clear-button-inline {
+  top: 15px;
+}
+
+html .home-page .hero-section #search-panel .clear-button-inline:hover {
+  color: var(--sc-accent);
+  background-color: color-mix(in srgb, var(--sc-accent) 14%, transparent);
+}
+
+@media (min-width: 1025px) {
+  html .home-page .hero-section #search-panel .swap-button-inline {
+    top: 13px;
+  }
+}
+
+html .home-page .hero-section #search-panel .swap-button-inline {
+  border-radius: 50%;
+  color: var(--sc-text);
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.3s ease,
+    background-color 0.3s ease,
+    scale 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html .home-page .hero-section #search-panel .swap-button-inline:hover {
+  color: var(--sc-accent);
+  background-color: color-mix(in srgb, var(--sc-accent) 14%, transparent);
+  scale: 1.12;
+}
+
+html .home-page .hero-section #search-panel .swap-button-inline.swapped {
+  color: var(--sc-accent);
+}
+
+html .home-page .hero-section #search-panel .swap-button-inline:focus-visible {
+  outline: 2px solid var(--sc-accent);
+  outline-offset: 2px;
+}
+
+/* ---------- Passenger counter ---------- */
+html .home-page .hero-section #search-panel .passenger-counter {
+  height: 54px;
+  padding: 0 10px;
+  border: 1px solid var(--sc-border);
+  border-radius: 14px;
+  background: var(--sc-input-bg);
+  transition: border-color 250ms ease, box-shadow 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html .home-page .hero-section #search-panel .passenger-counter:hover {
+  border-color: color-mix(in srgb, var(--sc-accent) 45%, var(--sc-border));
+}
+
+html .home-page .hero-section #search-panel .passenger-counter:focus-within {
+  border-color: var(--sc-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--sc-accent) 20%, transparent);
+}
+
+html .home-page .hero-section #search-panel .passenger-btn {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--sc-border);
+  color: var(--sc-text);
+  background: transparent;
+  transition:
+    transform 250ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 250ms ease,
+    border-color 250ms ease,
+    color 250ms ease;
+}
+
+html .home-page .hero-section #search-panel .passenger-btn:hover:not(:disabled) {
+  color: #fff;
+  border-color: transparent;
+  background: linear-gradient(150deg, #e8582f 0%, #c23f23 100%);
+  transform: scale(1.08);
+}
+
+html .home-page .hero-section #search-panel .passenger-btn:active:not(:disabled) {
+  transform: scale(0.88);
+  transition-duration: 100ms;
+}
+
+html .home-page .hero-section #search-panel .passenger-btn:focus-visible {
+  outline: 2px solid var(--sc-accent);
+  outline-offset: 2px;
+}
+
+html .home-page .hero-section #search-panel .passenger-count-display {
+  color: var(--sc-text);
+  font-size: 1.05rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Search Tickets button ---------- */
+html .home-page .hero-section #search-panel .search-button-coral {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 54px;
+  min-height: 54px;
+  border: 0 !important;
+  border-radius: 14px !important;
+  color: #fff !important;
+  background: linear-gradient(150deg, #e8582f 0%, #c23f23 100%) !important;
+  font-family: 'Satoshi', 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 18px 28px -16px rgba(219, 74, 43, 0.8) !important;
+  transform: none;
+  transition:
+    transform 400ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html .home-page .hero-section #search-panel .search-button-coral::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.35) 50%, transparent 65%);
+  transform: translateX(-120%);
+  transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html .home-page .hero-section #search-panel .search-button-coral::after {
+  content: '\2192';
+  display: inline-block;
+  width: 0;
+  margin-left: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition:
+    width 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    margin-left 350ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 300ms ease,
+    transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html .home-page .hero-section #search-panel .search-button-coral:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 24px 34px -16px rgba(219, 74, 43, 0.95) !important;
+}
+
+html .home-page .hero-section #search-panel .search-button-coral:hover:not(:disabled)::before {
+  transform: translateX(120%);
+}
+
+html .home-page .hero-section #search-panel .search-button-coral:hover:not(:disabled)::after {
+  width: 1.1em;
+  margin-left: 8px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+html .home-page .hero-section #search-panel .search-button-coral:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 120ms;
+}
+
+html .home-page .hero-section #search-panel .search-button-coral:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+html .home-page .hero-section #search-panel .search-button-coral:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---------- Departure time row ---------- */
+html .home-page .hero-section #search-panel .search-options-row {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--sc-border);
+}
+
+html .home-page .hero-section #search-panel .search-options-row label {
+  color: var(--sc-text);
+  font-family: 'Satoshi', 'Segoe UI', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+html .home-page .hero-section #search-panel .search-options-row select {
+  min-height: 44px;
+  border: 1px solid var(--sc-border);
+  border-radius: 12px;
+  color: var(--sc-text);
+  background-color: var(--sc-input-bg);
+  font-family: 'Satoshi', 'Segoe UI', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  accent-color: var(--sc-accent);
+  transition: border-color 250ms ease, box-shadow 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html .home-page .hero-section #search-panel .search-options-row select:hover {
+  border-color: color-mix(in srgb, var(--sc-accent) 45%, var(--sc-border));
+}
+
+html .home-page .hero-section #search-panel .search-options-row select:focus {
+  outline: none;
+  border-color: var(--sc-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--sc-accent) 20%, transparent);
+}
+
+html .home-page .hero-section #search-panel .search-options-row span {
+  color: var(--sc-muted);
+}
+
+/* ---------- Suggestions dropdown ---------- */
+html .home-page .hero-section #search-panel .autocomplete-suggestions {
+  margin-top: 4px;
+  border-radius: 16px;
+  box-shadow: 0 30px 50px -22px rgba(0, 0, 0, 0.55);
+  animation: sc-pop 240ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: top left;
+}
+
+html .home-page .hero-section #search-panel .suggestion-item {
+  transition: background-color 200ms ease, padding-left 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html .home-page .hero-section #search-panel .suggestion-item:hover {
+  padding-left: calc(var(--space-md) + 4px);
+  background: rgba(219, 74, 43, 0.1);
+}
+
+html .home-page .hero-section #search-panel .suggestion-icon-wrapper {
+  color: var(--sc-accent);
+  background-color: rgba(219, 74, 43, 0.12);
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes sc-rise {
+  from { opacity: 0; translate: 0 40px; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+@keyframes sc-field-in {
+  from { opacity: 0; translate: 0 18px; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+@keyframes sc-pop {
+  from { opacity: 0; translate: 0 -6px; scale: 0.98; }
+  to   { opacity: 1; translate: 0 0;    scale: 1; }
+}
+
+/* ---------- Staggered entrance for each field ---------- */
+html .home-page .hero-section #search-panel .search-fields-grid > *,
+html .home-page .hero-section #search-panel .search-options-row {
+  animation: sc-field-in 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+html .home-page .hero-section #search-panel .search-fields-grid > *:nth-child(1) { animation-delay: 320ms; }
+html .home-page .hero-section #search-panel .search-fields-grid > *:nth-child(2) { animation-delay: 400ms; }
+html .home-page .hero-section #search-panel .search-fields-grid > *:nth-child(3) { animation-delay: 480ms; }
+html .home-page .hero-section #search-panel .search-fields-grid > *:nth-child(4) { animation-delay: 560ms; }
+html .home-page .hero-section #search-panel .search-fields-grid > *:nth-child(5) { animation-delay: 640ms; }
+html .home-page .hero-section #search-panel .search-options-row { animation-delay: 720ms; }
+
+/* ---------- Tablet / mobile ---------- */
+@media (max-width: 1024px) {
+  html .home-page .hero-section #search-panel .search-card {
+    width: 90%;
+    margin: -28px auto 0;
+    padding: 18px;
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 520px) {
+  html .home-page .hero-section #search-panel .search-options-row {
+    margin-top: 16px;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html .home-page .hero-section #search-panel .search-card,
+  html .home-page .hero-section #search-panel .search-fields-grid > *,
+  html .home-page .hero-section #search-panel .search-options-row,
+  html .home-page .hero-section #search-panel .autocomplete-suggestions,
+  html .home-page .hero-section #search-panel .search-input,
+  html .home-page .hero-section #search-panel .passenger-btn,
+  html .home-page .hero-section #search-panel .swap-button-inline,
+  html .home-page .hero-section #search-panel .search-button-coral,
+  html .home-page .hero-section #search-panel .search-button-coral::before,
+  html .home-page .hero-section #search-panel .search-button-coral::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* ---------- Extra effect: a thin orange light travels around the card while you use it ---------- */
+@property --sc-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+html .home-page .hero-section #search-panel .search-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: 2;
+  padding: 1.5px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: conic-gradient(
+    from var(--sc-angle),
+    transparent 0deg,
+    transparent 235deg,
+    var(--sc-accent) 300deg,
+    var(--sc-accent-2) 335deg,
+    transparent 360deg
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  opacity: 0;
+  transition: opacity 450ms ease;
+  animation: sc-spin 4s linear infinite;
+  animation-play-state: paused;
+}
+
+html .home-page .hero-section #search-panel .search-card:focus-within::after {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+@keyframes sc-spin {
+  to { --sc-angle: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html .home-page .hero-section #search-panel .search-card::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ==========================================================
+   HOMEPAGE - UNIFIED REDESIGN (very end of Home.css)
+   One calm surface system for every section (light + dark),
+   orange scroll-progress bar, section dividers and a new
+   Stats section. Replaces the grey "poster" backdrop.
+   Delete from this comment to the end of the file to undo.
+   ========================================================== */
+
+.home-page {
+  --hp-accent: #db4a2b;
+  --hp-accent-2: #f8a348;
+  --hp-bg: #f5f7fb;
+  --hp-bg-alt: #ffffff;
+  --hp-surface: #ffffff;
+  --hp-border: rgba(20, 30, 50, 0.1);
+  --hp-text: #141b2b;
+  --hp-muted: #5d6b82;
+}
+
+html[data-theme='dark'] .home-page {
+  --hp-bg: #0b1220;
+  --hp-bg-alt: #0e1627;
+  --hp-surface: #141d2e;
+  --hp-border: rgba(255, 255, 255, 0.09);
+  --hp-text: #f1f5f9;
+  --hp-muted: #9aa5b8;
+}
+
+html { scroll-behavior: smooth; }
+::selection { background: rgba(219, 74, 43, 0.85); color: #fff; }
+
+/* ---------- Page and section surfaces: alternating, no grey poster look ---------- */
+html .home-page {
+  background: var(--hp-bg);
+  color: var(--hp-text);
+}
+
+html .home-page .hero-section,
+html .home-page .popular-routes-section,
+html .home-page .fleet-section,
+html .home-page .stats-section {
+  background: var(--hp-bg);
+  color: var(--hp-text);
+}
+
+html .home-page .features-section,
+html .home-page .deals-section {
+  background: var(--hp-bg-alt);
+  color: var(--hp-text);
+}
+
+/* Soft hairline between sections with a small orange centre mark */
+html .home-page .popular-routes-section,
+html .home-page .features-section,
+html .home-page .fleet-section,
+html .home-page .deals-section,
+html .home-page .stats-section {
+  border-top: 1px solid var(--hp-border);
+}
+
+/* ---------- Scroll progress bar (modern browsers) ---------- */
+@supports (animation-timeline: scroll()) {
+  html:has(.home-page)::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 9999;
+    pointer-events: none;
+    background: linear-gradient(90deg, var(--ft-accent, #db4a2b), #f8a348);
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: hp-progress linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+@keyframes hp-progress { to { transform: scaleX(1); } }
+
+/* ==========================================================
+   STATS - floating glass cards with gradient numbers
+   ========================================================== */
+html .home-page .stats-section {
+  padding: clamp(56px, 7vw, 96px) clamp(18px, 5vw, 76px);
+  border-bottom: 0;
+  overflow: hidden;
+}
+
+html .home-page .stats-section::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: auto 0 -40% 0;
+  height: 80%;
+  background: radial-gradient(ellipse at 50% 100%, rgba(219, 74, 43, 0.14), transparent 65%);
+  pointer-events: none;
+}
+
+html .home-page .stats-grid {
+  max-width: 1180px;
+  gap: clamp(14px, 2vw, 24px);
+}
+
+html .home-page .stat-item {
+  position: relative;
+  padding: clamp(24px, 3vw, 38px) 18px;
+  border: 1px solid var(--hp-border);
+  border-radius: 20px;
+  background: var(--hp-surface);
+  box-shadow: 0 24px 40px -32px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  transition:
+    transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 350ms ease;
+}
+
+/* Remove the old vertical separators */
+html .home-page .stat-item:not(:last-child)::after { display: none; }
+
+/* Orange top line that draws in on hover */
+html .home-page .stat-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--hp-accent), var(--hp-accent-2));
+  transform: scaleX(0.18);
+  transform-origin: left;
+  transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html .home-page .stat-number {
+  font-family: 'Cabinet Grotesk', 'Clash Display', 'Arial Black', sans-serif;
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--hp-accent) 0%, var(--hp-accent-2) 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: none;
+}
+
+html .home-page .stat-label,
+html[data-theme='dark'] .home-page .stat-label {
+  color: var(--hp-muted) !important;
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+}
+
+@media (hover: hover) {
+  html .home-page .stat-item:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--hp-accent) 40%, var(--hp-border));
+    box-shadow: 0 34px 50px -30px rgba(219, 74, 43, 0.4), 0 18px 30px -24px rgba(0, 0, 0, 0.5);
+  }
+  html .home-page .stat-item:hover::before { transform: scaleX(1); }
+}
+
+/* Scroll-in with stagger */
+@supports (animation-timeline: view()) {
+  html .home-page .stat-item {
+    animation: hp-stat-in cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 70%;
+  }
+  html .home-page .stat-item:nth-child(2) { animation-range: entry 8% entry 78%; }
+  html .home-page .stat-item:nth-child(3) { animation-range: entry 16% entry 86%; }
+  html .home-page .stat-item:nth-child(4) { animation-range: entry 24% entry 94%; }
+}
+
+@keyframes hp-stat-in {
+  from { opacity: 0; translate: 0 36px; scale: 0.96; }
+  to   { opacity: 1; translate: 0 0; scale: 1; }
+}
+
+@media (max-width: 768px) {
+  html .home-page .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  html .home-page .stat-item { padding: 22px 12px; border-radius: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  html:has(.home-page)::before,
+  html .home-page .stat-item,
+  html .home-page .stat-item::before { animation: none !important; transition: none !important; }
+}
+
+/* ==============================================================
+   BUSKAROO | PREMIUM HOMEPAGE FINISH
+   Add after your existing Home.css declarations.
+   Keeps all current JSX class names and existing app behavior.
+   ============================================================= */
+
+/* 1. One consistent visual language */
+.home-page {
+  --hp-accent: #da4b30;
+  --hp-accent-2: #f5a45a;
+  --hp-bg: #f6f7fa;
+  --hp-bg-alt: #ffffff;
+  --hp-surface: #ffffff;
+  --hp-border: #e5e9ef;
+  --hp-text: #172333;
+  --hp-muted: #627287;
+  --hp-shadow: 0 18px 52px -34px rgba(16, 35, 60, 0.28);
+  --hp-radius: 22px;
+}
+
+html[data-theme='dark'] .home-page {
+  --hp-bg: #0b1220;
+  --hp-bg-alt: #101928;
+  --hp-surface: #151f30;
+  --hp-border: rgba(219, 230, 246, 0.13);
+  --hp-text: #f5f7fb;
+  --hp-muted: #a4b3c7;
+  --hp-shadow: 0 22px 50px -30px rgba(0, 0, 0, 0.7);
+}
+
+html .home-page {
+  background: var(--hp-bg);
+  color: var(--hp-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+html .home-page :is(.popular-routes-section, .features-section, .fleet-section, .deals-section, .stats-section) {
+  padding-block: clamp(64px, 7vw, 100px);
+}
+
+html .home-page :is(.section-container, .features-container, .fleet-container, .stats-grid) {
+  width: min(100%, 1180px);
+  margin-inline: auto;
+}
+
+html .home-page :is(.section-subtitle, .fleet-description, .feature-card p, .stat-label) {
+  color: var(--hp-muted);
+}
+
+/* 2. Cinematic hero without difficult-to-read text */
+html .home-page .hero-section {
+  padding-bottom: clamp(34px, 4vw, 56px);
+}
+
+html .home-page .hero-section .hero-banner-container {
+  width: 100vw;
+  max-width: 100vw;
+  min-height: 530px;
+  height: clamp(530px, 52vw, 740px);
+  margin-left: calc(50% - 50vw);
+  margin-right: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+html .home-page .hero-section .hero-banner-image {
+  object-position: 68% center;
+}
+
+html .home-page .hero-section .hero-image-wash {
+  background:
+    linear-gradient(90deg, rgba(11, 24, 40, 0.91) 0%, rgba(11, 24, 40, 0.68) 41%, rgba(11, 24, 40, 0.14) 82%),
+    linear-gradient(0deg, rgba(11, 24, 40, 0.23), transparent 42%);
+}
+
+html .home-page .hero-section .hero-text-overlay {
+  width: min(920px, 90%);
+  max-width: 920px;
+  padding: clamp(26px, 5vw, 84px);
+}
+
+html .home-page .hero-section .hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: clamp(20px, 2.5vw, 32px);
+  padding: 9px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  letter-spacing: 0.13em;
+}
+
+html .home-page .hero-section .hero-kicker::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-radius: 50%;
+  background: #ffb069;
+  box-shadow: 0 0 0 4px rgba(255, 176, 105, 0.15);
+}
+
+html .home-page .hero-section .hero-title {
+  max-width: 13ch;
+  margin-bottom: clamp(16px, 2vw, 27px);
+  color: #fff;
+  font-family: 'Cabinet Grotesk', 'Clash Display', 'Segoe UI', sans-serif;
+  font-size: clamp(3.4rem, 7.2vw, 7.25rem);
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+  text-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+html .home-page .hero-section .hero-subtitle {
+  max-width: 36rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+/* 3. Search card: clean fields, clear hierarchy, visible keyboard focus */
+html .home-page .hero-section #search-panel .search-card {
+  border: 1px solid var(--hp-border);
+  border-radius: var(--hp-radius);
+  background: var(--sc-bg, var(--hp-surface));
+  box-shadow:
+    0 36px 80px -48px rgba(15, 27, 45, 0.68),
+    0 12px 32px -26px rgba(218, 75, 48, 0.28);
+}
+
+html .home-page .hero-section #search-panel .search-card:focus-within {
+  border-color: rgba(218, 75, 48, 0.46);
+}
+
+html .home-page .hero-section #search-panel .search-input,
+html .home-page .hero-section #search-panel .passenger-counter {
+  min-height: 54px;
+  box-sizing: border-box;
+  border-radius: 14px;
+}
+
+html .home-page .hero-section #search-panel .search-input:focus-visible,
+html .home-page .hero-section #search-panel .search-options-row select:focus-visible {
+  outline: 2px solid var(--hp-accent);
+  outline-offset: 2px;
+}
+
+html .home-page .hero-section #search-panel .search-button-coral {
+  min-height: 54px;
+  border-radius: 14px !important;
+  background: linear-gradient(125deg, #eb6039 0%, #d7462c 52%, #b93622 100%) !important;
+  box-shadow: 0 18px 30px -16px rgba(218, 75, 48, 0.7) !important;
+}
+
+html .home-page .hero-section #search-panel .autocomplete-suggestions {
+  max-height: min(300px, 45vh);
+  border: 1px solid var(--hp-border);
+  border-radius: 14px;
+  box-shadow: 0 22px 48px -22px rgba(8, 20, 38, 0.35);
+  overscroll-behavior: contain;
+}
+
+/* 4. Supporting sections use the same materials and spacing */
+html .home-page .popular-routes-section .routes-grid,
+html .home-page .features-section .features-grid {
+  gap: clamp(14px, 1.8vw, 24px);
+}
+
+html .home-page .popular-routes-section .route-shortcut-card {
+  min-height: 190px;
+  padding: clamp(18px, 2vw, 28px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 22px 40px -29px rgba(12, 23, 40, 0.65);
+}
+
+html .home-page .features-section .feature-card {
+  padding: clamp(22px, 2.5vw, 34px);
+  border: 1px solid var(--hp-border);
+  border-radius: 20px;
+  background: var(--hp-surface);
+  box-shadow: var(--hp-shadow);
+}
+
+html .home-page .features-section .feature-card h3,
+html .home-page .fleet-section .fleet-text-column h3,
+html .home-page .deals-section .deal-info h3,
+html .home-page .deals-section .deal-card-section-title,
+html .home-page .deals-section .deal-tagline {
+  color: var(--hp-text);
+}
+
+html .home-page .features-section .feature-icon {
+  margin-bottom: 20px;
+}
+
+html .home-page .fleet-section .fleet-video-wrapper {
+  border: 1px solid var(--hp-border);
+  border-radius: 22px;
+  box-shadow: 0 24px 44px -28px rgba(12, 25, 43, 0.4);
+}
+
+html .home-page .fleet-section .fleet-feature-icon {
+  border-radius: 12px;
+}
+
+html .home-page .deals-section .deal-card {
+  border: 1px solid var(--hp-border);
+  border-radius: 22px;
+  background-color: var(--hp-surface);
+  box-shadow: var(--hp-shadow);
+}
+
+html .home-page .deals-section .deal-description,
+html .home-page .deals-section .deal-tagline {
+  line-height: 1.55;
+}
+
+html .home-page .stats-section .stat-item {
+  border-color: var(--hp-border);
+  border-radius: 20px;
+  background: var(--hp-surface);
+  box-shadow: var(--hp-shadow);
+}
+
+/* 5. Responsive behavior, especially the location dropdown */
+@media (max-width: 1024px) {
+  html .home-page .hero-section .hero-banner-container {
+    min-height: 500px;
+    height: clamp(500px, 64vw, 630px);
+  }
+
+  html .home-page .hero-section #search-panel .search-card {
+    width: min(94%, 960px);
+    margin: -28px auto 0;
+    padding: clamp(16px, 2.8vw, 24px);
+  }
+
+  html .home-page .hero-section #search-panel .search-fields-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: start !important;
+    gap: 16px !important;
+  }
+
+  html .home-page .hero-section #search-panel .search-fields-grid > * {
+    min-width: 0;
+  }
+
+  html .home-page .hero-section #search-panel .autocomplete-field,
+  html .home-page .hero-section #search-panel .search-action-container {
+    grid-column: 1 / -1 !important;
+    width: 100%;
+    min-width: 0;
+  }
+
+  html .home-page .hero-section #search-panel .autocomplete-field {
+    height: auto !important;
+    overflow: visible;
+    align-self: start;
+  }
+
+  html .home-page .hero-section #search-panel .date-field,
+  html .home-page .hero-section #search-panel .passenger-field {
+    grid-column: span 1 !important;
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* In-flow suggestions push following controls down instead of covering them */
+  html .home-page .hero-section #search-panel .autocomplete-suggestions {
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    max-height: 210px;
+    margin-top: 8px !important;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  html .home-page .hero-section #search-panel .search-input,
+  html .home-page .hero-section #search-panel .passenger-counter {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  html .home-page .hero-section {
+    padding-bottom: 36px;
+  }
+
+  html .home-page .hero-section .hero-banner-container {
+    min-height: 430px;
+    height: 430px;
+  }
+
+  html .home-page .hero-section .hero-text-overlay {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px;
+  }
+
+  html .home-page .hero-section .hero-title {
+    max-width: 13ch;
+    font-size: clamp(2.4rem, 10vw, 4rem);
+    line-height: 0.99;
+  }
+
+  html .home-page .hero-section .hero-subtitle {
+    max-width: 26rem;
+    font-size: 0.96rem;
+  }
+
+  html .home-page .hero-section #search-panel .search-card {
+    width: calc(100% - 20px);
+    margin-top: -20px;
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  html .home-page .popular-routes-section .routes-grid,
+  html .home-page .features-section .features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px;
+  }
+
+  html .home-page .popular-routes-section .route-shortcut-card {
+    min-height: 155px;
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  html .home-page .features-section .feature-card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  html .home-page :is(.popular-routes-section, .features-section, .fleet-section, .deals-section, .stats-section) {
+    padding-block: 54px;
+    padding-inline: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  html .home-page .hero-section #search-panel .date-field,
+  html .home-page .hero-section #search-panel .passenger-field {
+    grid-column: 1 / -1 !important;
+  }
+
+  html .home-page .features-section .features-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (hover: hover) {
+  html .home-page .features-section .feature-card:hover,
+  html .home-page .deals-section .deal-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(218, 75, 48, 0.38);
+    box-shadow: 0 32px 48px -32px rgba(218, 75, 48, 0.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html .home-page .hero-section .hero-banner-image,
+  html .home-page .hero-section .hero-kicker,
+  html .home-page .hero-section #search-panel .search-card,
+  html .home-page .hero-section #search-panel .autocomplete-suggestions {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* ============================================================
+   BUSKAROO REWARDS CAROUSEL — HOMEPAGE INTEGRATION
+*/
+html .home-page .deals-section {
+  position: relative;
+  padding: clamp(38px, 5vw, 68px) clamp(16px, 4vw, 56px) !important;
+  background: #f7f8fb;
+  color: var(--hp-text, #172333);
+  text-align: left;
+  overflow: visible;
+}
+
+html[data-theme='dark'] .home-page .deals-section {
+  background: #0b1220;
+  color: var(--hp-text, #f5f7fb);
+}
+
+html .home-page .deals-section > .section-container {
+  width: min(100%, 1180px);
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: left;
+}
+
+/* Dark feature card by design, in both the site's light/dark themes. */
+html .home-page .deals-section .bk-offers {
+  --offer-bg: #111c2d;
+  --offer-text: #f7f9ff;
+  --offer-muted: #b7c5d9;
+  --offer-accent: #ed6747;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: clamp(22px, 3.5vw, 38px);
+  isolation: isolate;
+  position: relative;
+  background:
+    radial-gradient(ellipse at 95% 0%, rgba(238, 98, 71, .13), transparent 38%),
+    radial-gradient(ellipse at 0% 100%, rgba(65, 100, 160, .14), transparent 41%),
+    linear-gradient(120deg, #192840, #101827 78%);
+  color: var(--offer-text);
+  border: 1px solid rgba(219, 232, 255, .17);
+  border-radius: 22px;
+  box-shadow: 0 26px 64px -38px rgba(13, 29, 53, .55);
+  overflow: hidden;
+  text-align: left;
+}
+
+/* Prevent old oversized editorial headings affecting carousel text. */
+html .home-page .deals-section .bk-offers .bk-offers-copy h2 {
+  margin: 16px 0 12px;
+  max-width: 580px;
+  color: #fff;
+  font-family: 'Satoshi', 'Segoe UI', sans-serif;
+  font-size: clamp(1.85rem, 3.6vw, 2.85rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -.035em;
+  overflow-wrap: break-word;
+}
+
+html .home-page .deals-section .bk-offers .bk-offers-copy p {
+  color: #bbc9dc;
+  font-size: clamp(.91rem, 1.35vw, 1.04rem);
+  line-height: 1.65;
+}
+
+html .home-page .deals-section .bk-offers .bk-offers-offer-label {
+  line-height: 1.4;
+  color: #ffab94;
+}
+
+html .home-page .deals-section .bk-offers .bk-offers-slide {
+  min-width: 0;
+  width: 100%;
+  flex: 0 0 100%;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+  gap: clamp(24px, 5vw, 62px);
+  padding: clamp(24px, 3vw, 34px) 2px;
+  align-items: center;
+}
+
+html .home-page .deals-section .bk-offers .bk-offers-ticket {
+  min-width: 0;
+  box-shadow: 0 20px 38px -20px rgba(0, 0, 0, .47);
+  transition: box-shadow 240ms ease, transform 240ms ease;
+}
+
+/* Keep the voucher's large discount legible without the older heading styles. */
+html .home-page .deals-section .bk-offers .bk-offers-discount strong {
+  font-family: 'Satoshi', 'Segoe UI', sans-serif;
+  font-size: clamp(2.65rem, 5.4vw, 4.35rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -.065em;
+  color: #fff;
+}
+
+html .home-page .deals-section .bk-offers .bk-offers-primary-link {
+  color: #fff;
+  background: #e95739;
+  border-radius: 9px;
+  text-decoration: none;
+}
+
+html .home-page .deals-section .bk-offers .bk-offers-primary-link:hover {
+  color: #fff;
+  background: #ca4029;
+}
+
+html .home-page .deals-section .bk-offers .bk-offers-copy-button {
+  background: #fff;
+  color: #a93421;
+}
+
+html .home-page .deals-section .bk-offers .bk-offers-footnote {
+  color: #a5b8d1;
+}
+
+html .home-page .deals-section .bk-offers .bk-offers-arrow,
+html .home-page .deals-section .bk-offers .bk-offers-dot {
+  cursor: pointer;
+}
+
+/* Better contrast and hit targets for carousel navigation. */
+html .home-page .deals-section .bk-offers .bk-offers-arrow {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+}
+
+html .home-page .deals-section .bk-offers .bk-offers-dot {
+  min-height: 9px;
+  height: 9px;
+  min-width: 9px;
+}
+
+html .home-page .deals-section .bk-offers .bk-offers-dot.is-active {
+  width: 28px;
+}
+
+@media (hover: hover) {
+  html .home-page .deals-section .bk-offers .bk-offers-ticket:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 26px 45px -20px rgba(0, 0, 0, .55);
+  }
+}
+
+@media (max-width: 800px) {
+  html .home-page .deals-section .bk-offers .bk-offers-slide {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding: 24px 0;
+  }
+
+  html .home-page .deals-section .bk-offers .bk-offers-ticket {
+    width: 100%;
+    max-width: 540px;
+  }
+
+  html .home-page .deals-section .bk-offers .bk-offers-copy h2 {
+    max-width: 620px;
+    font-size: clamp(1.9rem, 5.5vw, 2.55rem);
+  }
+}
+
+@media (max-width: 600px) {
+  html .home-page .deals-section {
+    padding: 42px 14px 48px !important;
+  }
+
+  html .home-page .deals-section .bk-offers {
+    padding: 20px 17px;
+    border-radius: 18px;
+  }
+
+  html .home-page .deals-section .bk-offers .bk-offers-copy h2 {
+    font-size: clamp(1.75rem, 7.2vw, 2.3rem);
+    line-height: 1.16;
+  }
+
+  html .home-page .deals-section .bk-offers .bk-offers-copy p {
+    font-size: .91rem;
+    line-height: 1.55;
+  }
+
+  html .home-page .deals-section .bk-offers .bk-offers-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  html .home-page .deals-section .bk-offers .bk-offers-footnote {
+    max-width: 100%;
+  }
+
+  html .home-page .deals-section .bk-offers .bk-offers-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  html .home-page .deals-section .bk-offers .bk-offers-ticket {
+    padding: 20px 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  html .home-page .deals-section .bk-offers {
+    padding: 18px 13px;
+  }
+
+  html .home-page .deals-section .bk-offers .bk-offers-ticket-bottom {
+    gap: 8px;
+  }
+
+  html .home-page .deals-section .bk-offers .bk-offers-code-wrap b {
+    font-size: .94rem;
+  }
+
+  html .home-page .deals-section .bk-offers .bk-offers-copy-button {
+    padding: 8px 9px;
+    font-size: .73rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html .home-page .deals-section .bk-offers :is(
+    .bk-offers-track, .bk-offers-ticket, .bk-offers-arrow,
+    .bk-offers-primary-link, .bk-offers-dot
+  ) {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@property --feat-angle { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+
+html .home-page .features-section .features-grid { counter-reset: feat; }
+
+html .home-page .features-section .feature-card {
+  --accent: var(--poster-orange, #f8a348);
+  counter-increment: feat;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: clamp(220px, 19vw, 260px);
+  padding: clamp(20px, 1.9vw, 28px);
+  text-align: left;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  background:
+    radial-gradient(120% 90% at 0% 100%, color-mix(in srgb, var(--accent) 16%, transparent) 0%, transparent 60%),
+    linear-gradient(160deg, #1b1f27 0%, #12151b 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 20px 40px -24px rgba(0, 0, 0, 0.6);
+  transition:
+    transform 550ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 550ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 400ms ease,
+    filter 450ms ease;
+}
+
+html .home-page .features-section .feature-card:nth-child(3n + 2) { --accent: var(--poster-pink, #ff89a9); }
+html .home-page .features-section .feature-card:nth-child(3n)     { --accent: var(--poster-red, #db4a2b); }
+
+/* Rotating light ring (shows on hover) - replaces the old top line */
+html .home-page .features-section .feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  top: 0;
+  right: 0;
+  height: auto;
+  z-index: 3;
+  padding: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: conic-gradient(from var(--feat-angle), transparent 0deg, transparent 230deg,
+    color-mix(in srgb, var(--accent) 90%, #fff) 300deg, transparent 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  transform: none;
+  opacity: 0;
+  transition: opacity 500ms ease;
+  animation: feat-ring-spin 3.6s linear infinite;
+  animation-play-state: paused;
+}
+
+/* Soft sheen */
+html .home-page .features-section .feature-card::after {
+  z-index: 2;
+  background: linear-gradient(105deg, transparent 38%, rgba(255, 255, 255, 0.07) 50%, transparent 62%);
+}
+
+/* Icon tile: glass with accent colour */
+html .home-page .features-section .feature-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 0 auto;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  z-index: 2;
+}
+
+html .home-page .features-section .feature-icon svg {
+  color: color-mix(in srgb, var(--accent) 75%, #fff);
+}
+
+html .home-page .features-section .feature-icon::after { border-color: var(--accent); }
+
+/* Your SVGs are 44px; fit them inside the 56px tile */
+html .home-page .features-section .feature-icon svg { width: 28px; height: 28px; }
+
+/* Text block pinned to the bottom, like the route cards */
+html .home-page .features-section .feature-card h3 {
+  position: relative;
+  z-index: 2;
+  margin: 22px 0 8px;
+  color: #fff;
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  line-height: 1.05;
+  transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Index 01 / 02 / 03 / 04 */
+html .home-page .features-section .feature-card h3::before {
+  content: counter(feat, decimal-leading-zero);
+  display: block;
+  margin-bottom: 8px;
+  font-family: 'Satoshi', 'Segoe UI', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.42);
+  transition: color 400ms ease, letter-spacing 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html .home-page .features-section .feature-card p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+/* Hairline that draws itself under the text */
+html .home-page .features-section .feature-card p::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  margin-top: 14px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  transition: width 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) {
+  html .home-page .features-section .feature-card:hover {
+    transform: translateY(-6px);
+    background:
+      radial-gradient(120% 90% at 0% 100%, color-mix(in srgb, var(--accent) 24%, transparent) 0%, transparent 60%),
+      linear-gradient(160deg, #1b1f27 0%, #12151b 100%);
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09),
+      0 30px 50px -24px color-mix(in srgb, var(--accent) 45%, transparent),
+      0 18px 30px -18px rgba(0, 0, 0, 0.7);
+  }
+
+  html .home-page .features-section .feature-card:hover::before { opacity: 1; animation-play-state: running; transform: none; }
+  html .home-page .features-section .feature-card:hover::after { transform: translateX(120%); }
+
+  html .home-page .features-section .feature-card:hover .feature-icon {
+    transform: translateY(-3px) rotate(-6deg) scale(1.06);
+    border-color: transparent;
+    background: linear-gradient(150deg, #e0522f 0%, #c23f23 100%);
+    box-shadow: 0 16px 24px -12px rgba(219, 74, 43, 0.7);
+  }
+
+  html .home-page .features-section .feature-card:hover .feature-icon svg { color: #fff; }
+
+  html .home-page .features-section .feature-card:hover h3 { color: #fff; transform: translateX(4px); }
+  html .home-page .features-section .feature-card:hover h3::before {
+    color: color-mix(in srgb, var(--accent) 80%, #fff);
+    letter-spacing: 0.3em;
+  }
+  html .home-page .features-section .feature-card:hover p::after { width: 100%; }
+
+  html .home-page .features-section .features-grid:has(.feature-card:hover) .feature-card:not(:hover) {
+    filter: brightness(0.72) saturate(0.8);
+  }
+}
+
+@media (hover: none) {
+  html .home-page .features-section .feature-card p::after { width: 100%; }
+}
+
+@keyframes feat-ring-spin { to { --feat-angle: 360deg; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html .home-page .features-section .feature-card::before { animation: none !important; }
+}
+

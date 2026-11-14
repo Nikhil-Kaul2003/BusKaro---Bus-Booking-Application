@@ -1,0 +1,161 @@
+
+/* ===================================
+   BusKaroo - Premium Card Styles
+   =================================== */
+
+.card {
+  position: relative;
+  padding: var(--space-lg, 24px);
+  border: 1px solid var(--border-default, #e5e7eb);
+  border-radius: var(--radius-lg, 18px);
+
+  background: var(
+    --gradient-glass,
+    linear-gradient(145deg, #ffffff, #fff9f6)
+  );
+
+  color: var(--text-primary, #1f2937);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  box-shadow:
+    0 4px 12px rgba(20, 30, 50, 0.04),
+    0 12px 30px rgba(20, 30, 50, 0.05);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+/* ===================================
+   Default Card
+   =================================== */
+
+.card-default {
+  background: var(--bg-surface, #ffffff);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* ===================================
+   Elevated Card
+   =================================== */
+
+.card-elevated {
+  background: var(--bg-elevated, #ffffff);
+  border-color: var(--border-default, #e5e7eb);
+
+  box-shadow:
+    0 8px 24px rgba(20, 30, 50, 0.08),
+    0 18px 40px rgba(20, 30, 50, 0.06);
+
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* ===================================
+   Outline Card
+   =================================== */
+
+.card-outline {
+  background: transparent;
+  border: 1.5px solid var(--border-default, #e5e7eb);
+  box-shadow: none;
+}
+
+/* ===================================
+   Interactive / Hoverable Cards
+   =================================== */
+
+.card-hoverable {
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .card-hoverable:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary, #db4a2b);
+
+    box-shadow:
+      0 10px 25px rgba(20, 30, 50, 0.08),
+      0 18px 40px rgba(219, 74, 43, 0.12);
+  }
+}
+
+.card-hoverable:active {
+  transform: translateY(-1px);
+  transition-duration: 0.12s;
+}
+
+/* Keyboard Accessibility */
+
+.card-hoverable:focus-visible {
+  outline: 2px solid var(--primary, #db4a2b);
+  outline-offset: 3px;
+}
+
+/* ===================================
+   Dark Mode
+   =================================== */
+
+html[data-theme="dark"] .card {
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.18),
+    0 12px 30px rgba(0, 0, 0, 0.16);
+}
+
+html[data-theme="dark"] .card-default {
+  background: var(--bg-surface, #151d2b);
+}
+
+html[data-theme="dark"] .card-elevated {
+  background: var(--bg-elevated, #1d2939);
+}
+
+html[data-theme="dark"] .card-outline {
+  background: transparent;
+}
+
+@media (hover: hover) {
+  html[data-theme="dark"] .card-hoverable:hover {
+    border-color: var(--primary, #db4a2b);
+
+    box-shadow:
+      0 10px 25px rgba(0, 0, 0, 0.3),
+      0 16px 38px rgba(219, 74, 43, 0.12);
+  }
+}
+
+/* ===================================
+   Mobile Responsive
+   =================================== */
+
+@media (max-width: 768px) {
+  .card {
+    padding: var(--space-md, 16px);
+    border-radius: 14px;
+  }
+
+  .card-elevated {
+    box-shadow: 0 6px 18px rgba(20, 30, 50, 0.07);
+  }
+}
+
+/* ===================================
+   Reduced Motion
+   =================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card-hoverable {
+    transition: none !important;
+  }
+
+  .card-hoverable:hover,
+  .card-hoverable:active {
+    transform: none;
+  }
+}

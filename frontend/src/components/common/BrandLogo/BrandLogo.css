@@ -1,0 +1,197 @@
+.brand-logo {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+  height: 42px;
+  padding: 2px 5px;
+  border-radius: 7px;
+  background: #fff;
+}
+
+.brand-logo-crop {
+  position: relative;
+  display: block;
+  flex: 0 0 auto;
+  overflow: hidden;
+}
+
+.brand-logo-crop img {
+  position: absolute;
+  display: block;
+  max-width: none;
+  width: 67.2px;
+  height: 67.2px;
+}
+
+.brand-logo-mark {
+  width: 52px;
+  height: 38px;
+}
+
+.brand-logo-mark img {
+  left: -8.3px;
+  top: -7.5px;
+}
+
+.brand-logo-wordmark {
+  width: 154px;
+  height: 26px;
+}
+
+.brand-logo-wordmark img {
+  width: 176.4px;
+  height: 176.4px;
+  left: -12.7px;
+  top: -120.7px;
+}
+
+.brand-logo-header .brand-logo-wordmark-orange {
+  filter: hue-rotate(25deg) saturate(0.88);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0 42%, #000 46%);
+  mask-image: linear-gradient(90deg, transparent 0 42%, #000 46%);
+}
+
+@media (max-width: 768px) {
+  .brand-logo {
+    transform: scale(0.88);
+    transform-origin: left center;
+    margin-right: -26px;
+  }
+}
+
+/* ==========================================================
+   BRAND LOGO - DYNAMIC UPGRADE (end of file)
+   Entrance, idle motion, light sweep and hover lift.
+   Uses translate/scale properties so the mobile transform above
+   keeps working. Delete from this comment down to undo.
+   ========================================================== */
+
+.brand-logo {
+  position: relative;
+  cursor: pointer;
+  box-shadow:
+    0 0 0 1px rgba(219, 74, 43, 0.14),
+    0 10px 20px -12px rgba(0, 0, 0, 0.45);
+  transition:
+    translate 450ms cubic-bezier(0.22, 1, 0.36, 1),
+    scale 450ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 450ms cubic-bezier(0.22, 1, 0.36, 1);
+  animation: bl-enter 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Orange glow that softly breathes behind the logo */
+.brand-logo::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  z-index: -1;
+  border-radius: 12px;
+  background: radial-gradient(closest-side, rgba(219, 74, 43, 0.45), transparent 100%);
+  filter: blur(10px);
+  opacity: 0.35;
+  animation: bl-breathe 4.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Light sweep across the whole badge every few seconds */
+.brand-logo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(105deg, transparent 38%, rgba(248, 163, 72, 0.4) 50%, transparent 62%);
+  transform: translateX(-130%);
+  animation: bl-sweep 6s ease-in-out 1.6s infinite;
+  pointer-events: none;
+}
+
+/* The bus mark rolls in once, then idles with a tiny bob */
+.brand-logo-mark img {
+  animation:
+    bl-drive-in 900ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both,
+    bl-bob 3.2s ease-in-out 1.2s infinite;
+  transition: scale 450ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Wordmark slides in from the right */
+.brand-logo-wordmark {
+  animation: bl-slide-in 800ms cubic-bezier(0.22, 1, 0.36, 1) 250ms both;
+}
+
+@media (hover: hover) {
+  .brand-logo:hover {
+    translate: 0 -2px;
+    scale: 1.04;
+    box-shadow:
+      0 0 0 1px rgba(219, 74, 43, 0.4),
+      0 18px 28px -14px rgba(219, 74, 43, 0.7);
+  }
+
+  .brand-logo:hover::before { opacity: 0.8; }
+
+  .brand-logo:hover::after {
+    animation: bl-sweep-fast 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .brand-logo:hover .brand-logo-mark img {
+    scale: 1.08;
+  }
+}
+
+.brand-logo:active {
+  scale: 0.97;
+  transition-duration: 120ms;
+}
+
+.brand-logo:focus-visible {
+  outline: 2px solid #db4a2b;
+  outline-offset: 3px;
+}
+
+@keyframes bl-enter {
+  from { opacity: 0; translate: 0 -12px; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+@keyframes bl-drive-in {
+  from { opacity: 0; transform: translateX(-26px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes bl-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-1.5px); }
+}
+
+@keyframes bl-slide-in {
+  from { opacity: 0; transform: translateX(18px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes bl-breathe {
+  0%, 100% { opacity: 0.25; transform: scale(0.96); }
+  50%      { opacity: 0.55; transform: scale(1.06); }
+}
+
+@keyframes bl-sweep {
+  0%        { transform: translateX(-130%); }
+  25%, 100% { transform: translateX(130%); }
+}
+
+@keyframes bl-sweep-fast {
+  from { transform: translateX(-130%); }
+  to   { transform: translateX(130%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-logo,
+  .brand-logo::before,
+  .brand-logo::after,
+  .brand-logo-mark img,
+  .brand-logo-wordmark {
+    animation: none !important;
+    transition: none !important;
+  }
+}
